@@ -1,0 +1,11 @@
+{
+  "name": "1-webpack-vue.js-router-store-firebase",
+  "version": "1.0.0",
+  "description": "the first chapter of all the project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Detachment",
+  "license": "MIT"
+}
