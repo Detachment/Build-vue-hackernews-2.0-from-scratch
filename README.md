@@ -13,4 +13,4 @@ Notices: Vue-HN is short for vue-hackernews-2.0 in all the after chapters to hel
 
 ## Table of contents
 
-[1-webpack-vue.js-router-store-firebase](,/tutorials/1-webpack-vue.js-router-store-firebase/README.md)
+[1-webpack-vue.js-router-store-firebase](,/tutorials/1-webpack-vue.js-router-store-firebase)
