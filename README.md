@@ -1,7 +1,7 @@
 # Bulid vue-hackernews-2.0 from Scratch(work in progress)
 
 
-[![Webpack](./website-icon/webpack.favicon.ico)](https://webpack.js.org/)
+[![Webpack](/website-icon/webpack.favicon.ico)](https://webpack.js.org/)
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
@@ -13,4 +13,4 @@ Notices: Vue-HN is short for vue-hackernews-2.0 in all the after chapters to hel
 
 ## Table of contents
 
-[1-webpack-vue.js-router-store-firebase](,/tutorials/1-webpack-vue.js-router-store-firebase)
+[1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)
