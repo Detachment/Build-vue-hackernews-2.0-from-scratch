@@ -1,7 +1,7 @@
 body {
     font-family: Roboto, Helvetica, sans-serif;
     font-size: 15px;
-    background-color: lighten(#eceef1, 30%);
+    background-color: rgb(243, 245, 245);
     margin: 0;
     color: #34495e;
 }
@@ -28,12 +28,27 @@ body {
 }
 .header .inner .github {
     float: right;
-    margin:0;
+    margin: 3px 0px 0px 0px;
 }
 .header .inner .logo {
     width: 24px;
     vertical-align: middle;
     display: inline-block;
+}
+.nav {
+    background-color: #fff;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
+}
+.nav .pages {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+    text-align: center;
+}
+.nav .pages a {
+    color: inherit;
+    text-decoration: none;
+    margin: 0 1em;
 }
 @media (max-width: 860px) {
     .header .inner {
