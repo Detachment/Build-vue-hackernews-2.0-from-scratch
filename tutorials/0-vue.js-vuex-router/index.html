@@ -19,8 +19,8 @@
                 <a href="javascript:;">
                     <img src="../../website-icon/logo.png" alt="logo" class="logo">
                 </a>
-                <a href="javascript:;">Top</a>
-                <a href="javascript:;">New</a>
+                <router-link to="/top">Top</router-link>
+                <router-link to="/new">New</router-link>
                 <a href="javascript:;">Show</a>
                 <a href="javascript:;">Ask</a>
                 <a href="javascript:;">Jobs</a>
@@ -36,11 +36,32 @@
                 <a href="javascript:;">more &gt;</a>
             </div>
         </div>
-        <transition name="fade" mode="out-in">
-            <router-view class="view"></router-view>
-        </transition>
+
+        <router-view class="view"></router-view>
     </div>
 
+    <script type="text/x-template" id="top">
+        <div class="top">
+            <p>You are welcome to this world!</p>
+        </div>
+    </script>
+
+    <script type="text/javascript">
+        // const Top = { template: '<p>You are welcome to this world!</p>' }
+        const Top = Vue.extend({
+            template: '#top'
+        })
+
+        const router = new VueRouter({
+            routes: [
+                { path: '/top', component: Top }
+            ]
+        });
+        new Vue({
+            router,
+            el: '#app'
+        })
+    </script>
 
     <script src="./api.js"></script>
     <script src="./app.js"></script>

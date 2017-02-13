@@ -50,6 +50,14 @@ body {
     text-decoration: none;
     margin: 0 1em;
 }
+
+.top {
+    margin: 30px auto;
+    border: 2px solid rgba(255, 0, 0, 0.2);
+    padding: 0px;
+    max-width: 800px;
+    text-align: center;
+}
 @media (max-width: 860px) {
     .header .inner {
         padding: 15px 30px;
