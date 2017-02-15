@@ -35,28 +35,24 @@ body {
     vertical-align: middle;
     display: inline-block;
 }
-.nav {
+.top .nav {
     background-color: #fff;
     box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1);
 }
-.nav .pages {
+.top .nav .pages {
     max-width: 800px;
     margin: 0 auto;
     padding: 15px;
     text-align: center;
 }
-.nav .pages a {
+.top .nav .pages a {
     color: inherit;
     text-decoration: none;
     margin: 0 1em;
 }
 
 .top {
-    margin: 30px auto;
-    border: 2px solid rgba(255, 0, 0, 0.2);
-    padding: 0px;
-    max-width: 800px;
-    text-align: center;
+
 }
 @media (max-width: 860px) {
     .header .inner {

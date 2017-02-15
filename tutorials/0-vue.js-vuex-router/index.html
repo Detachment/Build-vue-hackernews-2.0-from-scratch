@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js" charset="utf-8"></script>
     <script src="https://unpkg.com/vuex@2.0.0" charset="utf-8"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+    <script src="./api.js"></script>
     <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -21,19 +22,12 @@
                 </a>
                 <router-link to="/top">Top</router-link>
                 <router-link to="/new">New</router-link>
-                <a href="javascript:;">Show</a>
-                <a href="javascript:;">Ask</a>
-                <a href="javascript:;">Jobs</a>
+                <router-link to="/show">Show</router-link>
+                <router-link to="/ask">Ask</router-link>
+                <router-link to="/jobs">Jobs</router-link>
                 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" class="github">
                         Bulid with Vue.js
                     </a>
-            </div>
-        </div>
-        <div class="nav">
-            <div class="pages">
-                <a href="javascript:;">&lt; prev</a>
-                <span>n/25</span>
-                <a href="javascript:;">more &gt;</a>
             </div>
         </div>
 
@@ -42,28 +36,184 @@
 
     <script type="text/x-template" id="top">
         <div class="top">
-            <p>You are welcome to this world!</p>
+            <div class="nav">
+                <div class="pages">
+                    <a href="javascript:;">&lt; prev</a>
+                    <span>n/25</span>
+                    <a href="javascript:;">more &gt;</a>
+                </div>
+            </div>
+
+            <transition :name="transition">
+                <div class="news-list" :key="displayedPage" v-if="true">
+                    <transition-group tag="ul" name="item">
+                        <li v-for="item in displayedItems" :key="item.id" :item="item" class="news-item">
+                            <span class="score">{{ item.score }}</span>
+                            <span class="title">
+                                <template v-if="item.url">
+                                    <a :href="item.url" target="_blank">{{ item.title }}</a>
+                                    <span class="host">({{ item.url | host }})</span>
+                                </template>
+                                <template v-else>
+                                    <router-link :to="'/item/' + item.id" >{{ item.title }}</router-link>
+                                </template>
+                            </span>
+                            <br>
+                            <span class="meta">
+                                <span v-if="item.type !== 'job'" class="by">
+                                    by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
+                                </span>
+                                <span class="time">
+                                    {{ item.time | timeAgo }} ago
+                                </span>
+                                <span v-if="item.type !== 'job'" class="comments-link">
+                                    | <router-link :to="'/item/' + item.id ">{{ item.descendants }}</router-link>
+                                </span>
+                            </span>
+                            <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
+                        </li>
+                    </transition-group>
+                </div>
+            </transition>
         </div>
     </script>
 
     <script type="text/javascript">
-        // const Top = { template: '<p>You are welcome to this world!</p>' }
         const Top = Vue.extend({
-            template: '#top'
-        })
+            template: '#top',
+
+            data() {
+                const isInitialRender = !this.$root._isMounted
+                return {
+                    loading: false,
+                    transition: 'slide-left',
+                    // displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
+                    // displayedItems: isInitialRender ? this.$store.getters.activeItems : []
+                }
+            },
+
+            props: ['item'],
+
+            computed: {
+                page(){
+                    return Number(this.$store.state.route.params.page) || 1
+                },
+                maxPage(){
+                    const { itemsPerPage, lists } = this.$store.state
+                    return Math.ceil(lists[this.type].length / itemsPerPage )
+                },
+                hasMore(){
+                    return this.page < this.maxPage
+                }
+            },
+
+            beforeMount(){
+                if(this.$root._isMounted){
+                    this.loadItems(this.page)
+                }
+            }
+
+
+
+        });
 
         const router = new VueRouter({
             routes: [
                 { path: '/top', component: Top }
             ]
         });
+
+        const store = new Vuex.Store({
+            state: {
+                itemsPerPage: 20,
+                items: { },
+                users: { },
+                lists: {
+                    top: [],
+                    new: [],
+                    show: [],
+                    ask: [],
+                    job: []
+                }
+            },
+
+            actions: {
+                FETCH_LIST_DATA: ({ commit, dispatch, state }, { type }) => {
+                    commit('SET_ACTIVE_TYPE', { type })
+                    return fetchIdsByType(type)
+                        .then(ids => commit('SET_LIST', { type, ids }))
+                        .then(() => dispatch('ENSURE_ACTIVE_ITEMS'))
+                },
+
+                ENSURE_ACTIVE_ITEMS: ({ dispatch, getters }) => {
+                    return dispatch('FETCH_ITEMS', {
+                        ids: getters.activeIds
+                    })
+                },
+
+                FETCH_ITEMS: ({ commit, state }, { ids }) => {
+                    ids = ids.filter(id => !state.items[id])
+                    if(ids.length){
+                        return fetchItems(ids).then(items => commit('SET_ITEMS', { items }))
+                    }else {
+                        return Promise.resolve()
+                    }
+                },
+
+                FETCH_USER: ({ commit, state }, { id }) => {
+                    return state.users[id]
+                        ? Promise.resolve(state.users[id])
+                        : fetchUser(id).then(user => commit('SET_USER', { user }))
+                }
+            },
+
+            mutations: {
+                SET_ACTIVE_TYPE: (state, { type }) => {
+                    state.activeType = type
+                },
+
+                SET_LIST: (state, { type, ids }) => {
+                    state.lists[type] = ids
+                },
+
+                SET_ITEMS: (state, { items }) => {
+                    items.forEach( item => {
+                        if(item){
+                            Vue.set(state.items, item.id, item)
+                        }
+                    })
+                },
+
+                SET_USER: (state, { user }) => {
+                    Vue.set(state.users, user.id, user)
+                }
+            },
+
+            getters: {
+                activeIds(state){
+                    const { activeType, itemsPerPage, lists } = state
+                    const page = Number(state.route.params.page) || 1
+                    if(activeType){
+                        const start = (page-1) * itemsPerPage
+                        const end = page * itemsPerPage
+                        return lists[activeType].slice(start, end)
+                    }else {
+                        return []
+                    }
+                },
+
+                activeItems (state, getters){
+                    return getters.activeIds.map(id => state.items[id]).filter(_ => _)
+                }
+            }
+        })
+
         new Vue({
             router,
             el: '#app'
         })
     </script>
 
-    <script src="./api.js"></script>
     <script src="./app.js"></script>
 
 </body>
