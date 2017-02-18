@@ -2,7 +2,7 @@ function sync(store, router, options) {
     var moduleName = (options || {}).moduleName || 'route'
 
     store.registerModule(moduleName, {
-        state: cloneRoute(router.currentRoute),
+        state: cloneRoute(router),
         mutations: {
             'router/ROUTE_CHANGED': function(state, transition) {
                 store.state[moduleName] = cloneRoute(transition.to, transition.from)

@@ -9,7 +9,7 @@
     <script src="https://unpkg.com/vuex@2.0.0" charset="utf-8"></script>
     <script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
     <script src="./api.js"></script>
-    <!-- <script src="./sync.js"></script> -->
+    <script src="./sync.js"></script>
     <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -88,42 +88,42 @@
                     loading: false,
                     transition: 'slide-left',
                     displayedPage:'1',
-                    displayedItems: [{score: '100', title: "You can you up", id: '1', url: "http://www.detachment.club"}, {score: '101', title: "You can you up, too", id: '2'}]
-                    // displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
-                    // displayedItems: isInitialRender ? this.$store.getters.activeItems : []
+                    // displayedItems: [{score: '100', title: "You can you up", id: '1', url: "http://www.detachment.club"}, {score: '101', title: "You can you up, too", id: '2'}]
+                    displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
+                    displayedItems: isInitialRender ? this.$store.getters.activeItems : []
                 }
             },
 
             props: ['item'],
 
-            // computed: {
-            //     page(){
-            //         return Number(this.$store.state.route.params.page) || 1
-            //     },
-            //     maxPage(){
-            //         const { itemsPerPage, lists } = this.$store.state
-            //         return Math.ceil(lists[this.type].length / itemsPerPage )
-            //     },
-            //     hasMore(){
-            //         return this.page < this.maxPage
-            //     }
-            // },
+            computed: {
+                page(){
+                    return Number(this.$store.state.route.params.page) || 1
+                },
+                maxPage(){
+                    const { itemsPerPage, lists } = this.$store.state
+                    return Math.ceil(lists[this.type].length / itemsPerPage )
+                },
+                hasMore(){
+                    return this.page < this.maxPage
+                }
+            },
 
-            // beforeMount(){
-            //     if(this.$root._isMounted){
-            //         this.loadItems(this.page)
-            //     }
-            //     this.unwatchList = watchList(this.type, ids => {
-            //         this.$store.commit('SET_LIST', { type: this.type, ids })
-            //         this.$store.dispatch('ENSURE_ACTIVE_ITEMS').then(() => {
-            //             this.displayedItems = this.$store.getters.activeItems
-            //         })
-            //     })
-            // },
+            beforeMount(){
+                if(this.$root._isMounted){
+                    this.loadItems(this.page)
+                }
+                this.unwatchList = watchList(this.type, ids => {
+                    this.$store.commit('SET_LIST', { type: this.type, ids })
+                    this.$store.dispatch('ENSURE_ACTIVE_ITEMS').then(() => {
+                        this.displayedItems = this.$store.getters.activeItems
+                    })
+                })
+            },
 
-            // beforeDestroy(){
-            //     this.unwatchList()
-            // },
+            beforeDestroy(){
+                this.unwatchList()
+            },
 
             watch: {
                 page(to, from){
@@ -131,23 +131,23 @@
                 }
             },
 
-            // methods: {
-            //     loadItems(to = this.page, from = -1){
-            //         this.loading = true
-            //         this.$store.dispatch('FETCH_LIST_DATA', {
-            //             type: this.page
-            //         }).then(() => {
-            //             if(this.page < 0 || this.page > this.maxPage){
-            //                 this.$router.replace(`/${this.type}/1`)
-            //                 return
-            //             }
-            //             this.transition = to > from ? 'slide-left' : 'slide-right'
-            //             this.displayedPage = to
-            //             this.displayedItems = this.$store.getters.activeItems
-            //             this.loading = false
-            //         })
-            //     }
-            // }
+            methods: {
+                loadItems(to = this.page, from = -1){
+                    this.loading = true
+                    this.$store.dispatch('FETCH_LIST_DATA', {
+                        type: this.page
+                    }).then(() => {
+                        if(this.page < 0 || this.page > this.maxPage){
+                            this.$router.replace(`/${this.type}/1`)
+                            return
+                        }
+                        this.transition = to > from ? 'slide-left' : 'slide-right'
+                        this.displayedPage = to
+                        this.displayedItems = this.$store.getters.activeItems
+                        this.loading = false
+                    })
+                }
+            }
 
         });
 
@@ -242,7 +242,7 @@
             }
         })
 
-        // sync(store, router);
+        sync(store, router);
 
         new Vue({
             router,
