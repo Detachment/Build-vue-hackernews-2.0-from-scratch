@@ -13,6 +13,8 @@ api.__ids__ = {};
     })
 });
 
+// console.log(api);
+
 // warm the front page cache every 15 mins
 warmCache();
 function warmCache() {

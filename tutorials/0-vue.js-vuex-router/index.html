@@ -34,15 +34,17 @@
         <router-view class="view"></router-view>
     </div>
 
-    <script type="text/x-template" id="top">
+    <script type="text/x-template" id="itemlist">
         <div class="top">
-            <div class="nav">
+            <!-- <div class="nav">
                 <div class="pages">
-                    <a href="javascript:;">&lt; prev</a>
-                    <span>n/25</span>
-                    <a href="javascript:;">more &gt;</a>
+                    <router-link v-if='page > 1' :to="'/top/' + (page - 1)">&lt; prev</router-link>
+                    <a v-else class="disabled">&lt; prev</a>
+                    <span>{{ page }}/{{ maxPage }}</span>
+                    <router-link v-if="hasMore" :to="'/top/' + (page + 1)">more &gt;</router-link>
+                    <a v-else class="disabled">more &gt;</a>
                 </div>
-            </div>
+            </div> -->
 
             <transition :name="transition">
                 <div class="news-list" :key="displayedPage" v-if="true">
@@ -79,22 +81,22 @@
     </script>
 
     <script type="text/javascript">
-        const Top = Vue.extend({
-            template: '#top',
+        const ItemList = Vue.extend({
+            template: '#itemlist',
 
             data() {
                 const isInitialRender = !this.$root._isMounted
                 return {
                     loading: false,
                     transition: 'slide-left',
-                    displayedPage:'1',
-                    // displayedItems: [{score: '100', title: "You can you up", id: '1', url: "http://www.detachment.club"}, {score: '101', title: "You can you up, too", id: '2'}]
                     displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
                     displayedItems: isInitialRender ? this.$store.getters.activeItems : []
                 }
             },
 
-            props: ['item'],
+            props: {
+                type: String
+            },
 
             computed: {
                 page(){
@@ -151,9 +153,27 @@
 
         });
 
+
+
+        function createListView(type) {
+            return {
+                name: `${type}-stories-view`,
+                preFetch(store) {
+                    return store.dispatch('FETCH_LIST_DATA', { type })
+                },
+                render(h){
+                    return h(ItemList, { props: { type }})
+                }
+            }
+        }
+
         const router = new VueRouter({
             routes: [
-                { path: '/top', component: Top }
+                { path: '/top/:page(\\d+)?', component: createListView('top') },
+                { path: '/new/:page(\\d+)?', component: createListView('new') },
+                { path: '/show/:page(\\d+)?', component: createListView('show') },
+                { path: '/ask/:page(\\d+)?', component: createListView('ask') },
+                { path: '/job/:page(\\d+)?', component: createListView('job') },
             ]
         });
 
