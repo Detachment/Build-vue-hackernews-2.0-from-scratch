@@ -25,7 +25,7 @@
                 <router-link to="/new">New</router-link>
                 <router-link to="/show">Show</router-link>
                 <router-link to="/ask">Ask</router-link>
-                <router-link to="/jobs">Jobs</router-link>
+                <router-link to="/job">Jobs</router-link>
                 <a href="https://github.com/vuejs/vue-hackernews-2.0" target="_blank" class="github">
                         Bulid with Vue.js
                     </a>
@@ -36,16 +36,15 @@
 
     <script type="text/x-template" id="itemlist">
         <div class="top">
-            <!-- <div class="nav">
+            <div class="nav">
                 <div class="pages">
-                    <router-link v-if='page > 1' :to="'/top/' + (page - 1)">&lt; prev</router-link>
+                    <router-link v-if='page > 1' :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
                     <a v-else class="disabled">&lt; prev</a>
                     <span>{{ page }}/{{ maxPage }}</span>
-                    <router-link v-if="hasMore" :to="'/top/' + (page + 1)">more &gt;</router-link>
+                    <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
                     <a v-else class="disabled">more &gt;</a>
                 </div>
-            </div> -->
-
+            </div>
             <transition :name="transition">
                 <div class="news-list" :key="displayedPage" v-if="true">
                     <transition-group tag="ul" name="item">
@@ -54,7 +53,7 @@
                             <span class="title">
                                 <template v-if="item.url">
                                     <a :href="item.url" target="_blank">{{ item.title }}</a>
-                                    <span class="host">({{ item.url }})</span>
+                                    <span class="host">({{ item.url | host }})</span>
                                 </template>
                                 <template v-else>
                                     <router-link :to="'/item/' + item.id" >{{ item.title }}</router-link>
@@ -66,10 +65,10 @@
                                     by <router-link :to="'/user/' + item.by">{{ item.by }}</router-link>
                                 </span>
                                 <span class="time">
-                                    {{ item.time }} ago
+                                    {{ item.time | timeAgo }} ago
                                 </span>
                                 <span v-if="item.type !== 'job'" class="comments-link">
-                                    | <router-link :to="'/item/' + item.id ">{{ item.descendants }}</router-link>
+                                    | <router-link :to="'/item/' + item.id ">{{ item.descendants }} comments</router-link>
                                 </span>
                             </span>
                             <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
@@ -112,9 +111,9 @@
             },
 
             beforeMount(){
-                if(this.$root._isMounted){
-                    this.loadItems(this.page)
-                }
+                // if(this.$root._isMounted){
+                    this.loadItems(this.page);
+
                 this.unwatchList = watchList(this.type, ids => {
                     this.$store.commit('SET_LIST', { type: this.type, ids })
                     this.$store.dispatch('ENSURE_ACTIVE_ITEMS').then(() => {
@@ -133,11 +132,36 @@
                 }
             },
 
+            filters: {
+                host(url){
+                    const host = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '')
+                    const parts = host.split('.').slice(-3)
+                    if(parts[0] === 'www') parts.shift()
+                    return parts.join('.')
+                },
+                timeAgo(seconds){
+                    const pluralize = function(time, label){
+                        if(time === 1){
+                            return time + label
+                        }
+                        return time + label + 's'
+                    }
+                    const between = Date.now() / 1000 - Number(seconds)
+                    if(between < 3600){
+                        return pluralize(~~(between / 60), ' minute')
+                    }else if (between < 86400) {
+                        return pluralize(~~(between / 3600), ' hour')
+                    }else {
+                        return pluralize(~~(between / 86400), ' day')
+                    }
+                }
+            },
+
             methods: {
                 loadItems(to = this.page, from = -1){
                     this.loading = true
                     this.$store.dispatch('FETCH_LIST_DATA', {
-                        type: this.page
+                        type: this.type
                     }).then(() => {
                         if(this.page < 0 || this.page > this.maxPage){
                             this.$router.replace(`/${this.type}/1`)
@@ -174,11 +198,13 @@
                 { path: '/show/:page(\\d+)?', component: createListView('show') },
                 { path: '/ask/:page(\\d+)?', component: createListView('ask') },
                 { path: '/job/:page(\\d+)?', component: createListView('job') },
+                { path: '*', redirect: '/top' },
             ]
         });
 
         const store = new Vuex.Store({
             state: {
+                activeType: null,
                 itemsPerPage: 20,
                 items: { },
                 users: { },
@@ -257,7 +283,7 @@
                 },
 
                 activeItems (state, getters){
-                    return getters.activeIds.map(id => state.items[id]).filter(_ => _)
+                    return getters.activeIds.map(id => state.items[id])
                 }
             }
         })
