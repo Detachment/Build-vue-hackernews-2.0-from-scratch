@@ -102,7 +102,6 @@ function FetchUser(store){
         id: store.state.route.params.id
     })
 };
-
 const UserView = Vue.extend({
     template: '#userview',
 
@@ -137,7 +136,30 @@ const UserView = Vue.extend({
         FetchUser(this.$store)
     },
 
+});
+
+
+function FetchItem(store) {
+    return store.dispatch('FETCH_ITEMS', {
+        ids: [store.state.route.params.id]
+    })
+}
+const ItemView = Vue.extend({
+    template: '#itemview',
+
+    name: 'item-vew',
+
+    computed: {
+        item(){
+            return this.$store.state.items[this.$route.params.id]
+        }
+    },
+
+    beforeMount(){
+        FetchItem(this.$store)
+    }
 })
+
 
 function createListView(type) {
     return {
@@ -152,7 +174,8 @@ function createListView(type) {
 }
 
 const router = new VueRouter({
-
+    // scrollBehavior only works in HTML5 history mode
+    // scrollBehavior: () => ({ y: 0 }),
     routes: [
         { path: '/top/:page(\\d+)?', component: createListView('top') },
         { path: '/new/:page(\\d+)?', component: createListView('new') },
@@ -160,7 +183,7 @@ const router = new VueRouter({
         { path: '/ask/:page(\\d+)?', component: createListView('ask') },
         { path: '/job/:page(\\d+)?', component: createListView('job') },
         { path: '/user/:id', component: UserView },
-        // { path: '/item/:id(\\d+)?', component: ItemView },
+        { path: '/item/:id(\\d+)?', component: ItemView },
         { path: '*', redirect: '/top' },
     ]
 });
