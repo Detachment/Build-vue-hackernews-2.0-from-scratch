@@ -1,5 +1,6 @@
 const ItemList = Vue.extend({
     template: '#itemlist',
+    name: 'item-list',
 
     data() {
         const isInitialRender = !this.$root._isMounted
@@ -30,7 +31,7 @@ const ItemList = Vue.extend({
 
     beforeMount(){
         // if(this.$root._isMounted){
-            this.loadItems(this.page);
+        this.loadItems(this.page);
 
         this.unwatchList = watchList(this.type, ids => {
             this.$store.commit('SET_LIST', { type: this.type, ids })
@@ -96,6 +97,47 @@ const ItemList = Vue.extend({
 });
 
 
+function FetchUser(store){
+    return store.dispatch('FETCH_USER', {
+        id: store.state.route.params.id
+    })
+};
+
+const UserView = Vue.extend({
+    template: '#userview',
+
+    name: 'user-view',
+
+    computed: {
+        user(){
+            return this.$store.state.users[this.$route.params.id]
+        }
+    },
+
+    filters: {
+        timeAgo(seconds){
+            const pluralize = function(time, label){
+                if(time === 1){
+                    return time + label
+                }
+                return time + label + 's'
+            }
+            const between = Date.now() / 1000 - Number(seconds)
+            if(between < 3600){
+                return pluralize(~~(between / 60), ' minute')
+            }else if (between < 86400) {
+                return pluralize(~~(between / 3600), ' hour')
+            }else {
+                return pluralize(~~(between / 86400), ' day')
+            }
+        }
+    },
+
+    beforeMount(){
+        FetchUser(this.$store)
+    },
+
+})
 
 function createListView(type) {
     return {
@@ -110,12 +152,15 @@ function createListView(type) {
 }
 
 const router = new VueRouter({
+
     routes: [
         { path: '/top/:page(\\d+)?', component: createListView('top') },
         { path: '/new/:page(\\d+)?', component: createListView('new') },
         { path: '/show/:page(\\d+)?', component: createListView('show') },
         { path: '/ask/:page(\\d+)?', component: createListView('ask') },
         { path: '/job/:page(\\d+)?', component: createListView('job') },
+        { path: '/user/:id', component: UserView },
+        // { path: '/item/:id(\\d+)?', component: ItemView },
         { path: '*', redirect: '/top' },
     ]
 });
