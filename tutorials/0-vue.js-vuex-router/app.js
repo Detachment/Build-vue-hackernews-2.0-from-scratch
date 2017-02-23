@@ -183,6 +183,7 @@ const router = new VueRouter({
         { path: '/ask/:page(\\d+)?', component: createListView('ask') },
         { path: '/job/:page(\\d+)?', component: createListView('job') },
         { path: '/user/:id', component: UserView },
+        // this component is more complex then others because of the loop
         { path: '/item/:id(\\d+)?', component: ItemView },
         { path: '*', redirect: '/top' },
     ]
