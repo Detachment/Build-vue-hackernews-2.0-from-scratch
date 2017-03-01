@@ -44,6 +44,78 @@ body {
     vertical-align: middle;
     display: inline-block;
 }
+.item-view {
+    position: relative;
+    top: 54px;
+}
+.item-view .item-view-header {
+    background-color: #fff;
+    padding: 1.8em 2em 1em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.item-view .item-view-header h1 {
+    display: inline;
+    font-size: 1.5em;
+    margin: 0;
+    margin-right: .5em;
+}
+.item-view .item-view-header .host {
+    color: #999;
+}
+.item-view .item-view-header .meta {
+    color: #999;
+}
+.item-view .item-view-header .meta a {
+    color: #999;
+    text-decoration: underline;
+}
+.item-view .item-view-header a {
+    text-decoration: none;
+    color: inherit;
+}
+.item-view .item-view-comments {
+    background-color: #fff;
+    margin: 10px 0 20px;
+    padding: 0 2em;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.item-view .item-view-comments-header {
+    margin: 0;
+    font-size: 1.1em;
+    padding: 1em 0;
+}
+.item-view .comment-children {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.item-view .comment-children .comment-children {
+    margin-left: 1em;
+}
+.item-view .comment-children .comment {
+    border-top: 1px solid #eee;
+    position: relative;
+}
+.item-view .comment-children .comment .expand {
+    cursor: pointer;
+}
+.item-view .comment-children .comment .by {
+    font-size: .9em;
+    padding: 1em 0;
+    color: #999;
+    padding-bottom: 0;
+}
+.item-view .comment-children .comment .by a {
+    color: #999;
+    text-decoration: underline;
+}
+.item-view .comment-children .comment .text {
+    font-size: .9em;
+    padding: 1em 0;
+}
+.item-view .comment-children .comment .text a:hover {
+    color: #ff6600;
+}
 .view {
     max-width: 800px;
     margin: 0 auto;
@@ -186,5 +258,8 @@ body {
     }
     .header .inner .github {
         display: none;
+    }
+    .item-view .item-view-header h1 {
+        font-size: 1.25em;
     }
 }

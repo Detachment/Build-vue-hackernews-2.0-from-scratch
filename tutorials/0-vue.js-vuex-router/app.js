@@ -139,6 +139,54 @@ const UserView = Vue.extend({
 });
 
 
+const CommentView = Vue.extend({
+    template: '#commentview',
+    name: 'comment',
+
+    props: ['id'],
+    data(){
+        return {
+            open: true
+        }
+    },
+    computed: {
+        comment(){
+            return this.$store.state.items[this.id]
+        }
+    },
+    beforeMount(){
+        this.$store.dispatch('FETCH_ITEMS', {
+            ids: [this.id]
+        })
+    },
+    methods: {
+        pluralize(n){
+            return n + (n === 1? ' reply' : ' replies')
+        }
+    },
+
+    filters: {
+        timeAgo(seconds){
+            const pluralize = function(time, label){
+                if(time === 1){
+                    return time + label
+                }
+                return time + label + 's'
+            }
+            const between = Date.now() / 1000 - Number(seconds)
+            if(between < 3600){
+                return pluralize(~~(between / 60), ' minute')
+            }else if (between < 86400) {
+                return pluralize(~~(between / 3600), ' hour')
+            }else {
+                return pluralize(~~(between / 86400), ' day')
+            }
+        },
+    },
+});
+
+
+
 function FetchItem(store) {
     return store.dispatch('FETCH_ITEMS', {
         ids: [store.state.route.params.id]
@@ -146,8 +194,9 @@ function FetchItem(store) {
 }
 const ItemView = Vue.extend({
     template: '#itemview',
+    name: 'itemview',
 
-    name: 'item-vew',
+    components: { CommentView },
 
     computed: {
         item(){
@@ -157,7 +206,32 @@ const ItemView = Vue.extend({
 
     beforeMount(){
         FetchItem(this.$store)
-    }
+    },
+
+    filters: {
+        timeAgo(seconds){
+            const pluralize = function(time, label){
+                if(time === 1){
+                    return time + label
+                }
+                return time + label + 's'
+            }
+            const between = Date.now() / 1000 - Number(seconds)
+            if(between < 3600){
+                return pluralize(~~(between / 60), ' minute')
+            }else if (between < 86400) {
+                return pluralize(~~(between / 3600), ' hour')
+            }else {
+                return pluralize(~~(between / 86400), ' day')
+            }
+        },
+        host(url){
+            const host = url.replace(/^https?:\/\//, '').replace(/\/.*$/, '')
+            const parts = host.split('.').slice(-3)
+            if(parts[0] === 'www') parts.shift()
+            return parts.join('.')
+        },
+    },
 })
 
 
@@ -183,7 +257,6 @@ const router = new VueRouter({
         { path: '/ask/:page(\\d+)?', component: createListView('ask') },
         { path: '/job/:page(\\d+)?', component: createListView('job') },
         { path: '/user/:id', component: UserView },
-        // this component is more complex then others because of the loop
         { path: '/item/:id(\\d+)?', component: ItemView },
         { path: '*', redirect: '/top' },
     ]

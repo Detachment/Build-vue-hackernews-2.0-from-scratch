@@ -117,36 +117,29 @@
                         {{ item.kids ? item.descendants + ' comments' : 'No comment yet.'}}
                     </p>
                     <ul v-if="item.kids" class="comment-children">
-                        <li v-for="id in item.kids" :id="id">
-                            <div class="by">
-                                <router-link :to="'/user/' + comment.by">{{ comment.by }}</router-link>
-                                {{ comment.time | timeAgo }} ago
-                                <span v-if="comment.kids && comment.kids.length">
-                                    | <a @click="open = !open" class="expand">
-                                        {{ pluralize(comment.kids.length) + (open ? 'collapse ' : 'expand ') }}
-                                    </a>
-                                </span>
-                            </div>
-                            <div class="text" v-html="comment.text"></div>
-                            <ul class="comment-children" v-show="open">
-                                <li v-for="id in comment.kids" :id='id'>
-                                    <div class="by">
-                                        <router-link :to="'/user/' + comment.by">{{ comment.by }}</router-link>
-                                        {{ comment.time | timeAgo }} ago
-                                        <span v-if="comment.kids && comment.kids.length">
-                                            | <a @click="open = !open" class="expand">
-                                                {{ pluralize(comment.kids.length) + (open ? 'collapse ' : 'expand ') }}
-                                            </a>
-                                        </span>
-                                    </div>
-                                    <div class="text" v-html="comment.text"></div>
-                                </li>
-                            </ul>
-                        </li>
+                        <CommentView v-for="id in item.kids" :id="id"></CommentView>
                     </ul>
                 </div>
             </template>
         </div>
+    </script>
+
+    <script type="text/x-template" id="commentview">
+        <li v-if="comment" class="comment">
+            <div class="by">
+                <router-link :to="'/user/' + comment.by">{{ comment.by }}</router-link>
+                {{ comment.time | timeAgo }} ago
+                <span v-if="comment.kids && comment.kids.length">
+                    | <a @click="open = !open" class="expand">
+                        {{ pluralize(comment.kids.length) + (open ? ' collapse ' : ' expand ') }}
+                    </a>
+                </span>
+            </div>
+            <div class="text" v-html="comment.text"></div>
+            <ul class="comment-children" v-show="open">
+                <comment v-for="id in comment.kids" :id="id"></comment>
+            </ul>
+        </li>
     </script>
 
 
