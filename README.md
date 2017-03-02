@@ -5,7 +5,7 @@
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
-As a new learner of front-end develop vue.js, I find it a bit difficult to understand the offical example: vue-hackernews-2.0. Meanwhile, the complexity of this example really attracts me. So I spend some time on figuring out how it works and with this tutorial I will show you how I rebulid it step-by-step.
+As a new learner of front-end develop and vue.js, I find it a bit difficult to understand the offical example: vue-hackernews-2.0. Meanwhile, the complexity of this example really attracts me. So I spend some time on figuring out how it works and with this tutorial I will show you how I rebulid it step-by-step.
 
 **Note that this tutorial is for beginners.** I will divide this tutorial into serval chapters, each of then represent different step of the whole process. In the head of every chapter, I would list some basic understandings that are acquired for the corresponding chapter.
 
