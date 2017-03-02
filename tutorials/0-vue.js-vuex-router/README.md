@@ -19,37 +19,38 @@ As we can see, almost all the features that existed in the offical example can a
 Don't get dizzy when you see so many lists, because apart from the vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
 
 There are some key points to bulid this project:  
-1. How to get data through the offered HackerNews API without installing Firebase package?     
-**Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:   
-    ```javascript
-    // without installing firebase package:
+- How to get data through the offered HackerNews API without installing Firebase package?     
+**Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:  
 
-    var config = {
-        databaseURL: "https://hacker-news.firebaseio.com"
-    };
-    firebase.initializeApp(config);
+```javascript
+// without installing firebase package:
 
-    var api = firebase.database().ref('/v0');
+var config = {
+    databaseURL: "https://hacker-news.firebaseio.com"
+};
+firebase.initializeApp(config);
 
-    // with firebase package:
-    import Firebase from 'firebase'
+var api = firebase.database().ref('/v0');
 
-    const api = inBrowser
-      ? new Firebase('https://hacker-news.firebaseio.com/v0')
-      : (process.__API__ || (process.__API__ = createServerSideAPI()))
+// with firebase package:
+import Firebase from 'firebase'
 
-    function createServerSideAPI () {
-      const api = new Firebase('https://hacker-news.firebaseio.com/v0')
+const api = inBrowser
+  ? new Firebase('https://hacker-news.firebaseio.com/v0')
+  : (process.__API__ || (process.__API__ = createServerSideAPI()))
 
-    ```
+function createServerSideAPI () {
+  const api = new Firebase('https://hacker-news.firebaseio.com/v0')
 
-2. How to communicate between vuex and router?  
+```
+
+- How to communicate between vuex and router?  
 **Answer :** Two key points to ensure this:
     - Register store and router in the same vue instance;
     - With the help of a package named "vuex-router-sync".  
     *Note: Without a package management tool, we should modify the index.js of this package and rename it as sync.js and then link it as a javascript file.*    
 
-3. How to deal with .vue file?  
+- How to deal with .vue file?  
 **Answer :** Files ended up with .vue mean that they are single file components. We can replace them with "x-template" in html part, "Vue.extend" in javascript part and css file in style part. Want to know more specific you should take a dive into the source code.  
 
 After you conquered all these problems and with good understanding of vue.js ecosystem, you can bulid this project all by your own!
