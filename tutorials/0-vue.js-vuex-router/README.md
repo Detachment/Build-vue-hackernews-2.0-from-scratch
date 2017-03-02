@@ -1,5 +1,7 @@
 ## 0. Vue.js, vuex, Vue-router, Hackernews API, Firebase and ES6
 
+### Preface
+
 As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the offical edition and my edition respectively.
 
 ***[ My Edition ]***
@@ -17,6 +19,8 @@ As we can see, almost all the features that existed in the offical example can a
 - [Firebase: App success made simple](https://firebase.google.com/docs/web/setup)
 
 Don't get dizzy when you see so many lists, because apart from the vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
+
+### Progress
 
 There are some key points to bulid this project:  
 - How to get data through the offered HackerNews API without installing Firebase package?     
@@ -56,6 +60,8 @@ function createServerSideAPI () {
 After you conquered all these problems and with good understanding of vue.js ecosystem, you can bulid this project all by your own!
 
 *Note: The loading order of files in the html head part affects this project a lot because of the dependency. Tested successfully in Chrome but failed in Firefox and IE. So make sure you use Chrome or replace the native file with links.*
+
+### Next
 
 So far so good. But if we have more patience and look over this edition of the project, we would find some fatal factors. All the files are in chaos, the structure of the whole project is fragile, no consideration has been taken into account in access speed and user experience. Huge price would be paied to maintain all these.
 
