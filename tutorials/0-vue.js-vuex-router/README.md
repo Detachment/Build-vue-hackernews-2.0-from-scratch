@@ -20,8 +20,8 @@ Don't get dizzy when you see so many lists, because apart from the vue.js and it
 
 There are some key points to bulid this project:  
 1. How to get data through the offered HackerNews API without installing Firebase package?     
-**Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:
-    ```
+**Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:   
+    ```javascript
     // without installing firebase package:
 
     var config = {
@@ -40,6 +40,7 @@ There are some key points to bulid this project:
 
     function createServerSideAPI () {
       const api = new Firebase('https://hacker-news.firebaseio.com/v0')
+
     ```
 
 2. How to communicate between vuex and router?  
