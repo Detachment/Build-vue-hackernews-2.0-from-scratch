@@ -38,17 +38,45 @@ function fetchItem(store) {
     })
 }
 
+function fetchComments(store, item) {
+    if(item.kids){
+        return store.dispatch('FETCH_ITEMS', {
+            ids: item.kids
+        }).then(() => Promise.all(item.kids.map(id => {
+            return fetchComments(store, store.state.items[id])
+        })))
+    }
+}
+
+function fetchItemAndComments(store) {
+    return fetchItem(store).then(() => {
+        const { items, route } = store.state
+        return fetchComments(store, items[route.params.id])
+    })
+}
 
 
 export default {
-  data () {
-    return {}
-  },
-  computed: {},
-  ready () {},
-  attached () {},
-  methods: {},
-  components: {}
+    name: 'item-view',
+    components: { Spinner, Comment },
+    data () {
+        return {
+            loading: true
+        }
+    },
+    computed: {
+        item(){
+            return this.$store.state.items[this.$route.params.id]
+        }
+    },
+
+    preFetch: fetchItem,
+
+    beforeMount(){
+        fetchItemAndComments(this.$store).then(() => {
+            this.loading = false
+        })
+    }
 }
 </script>
 
