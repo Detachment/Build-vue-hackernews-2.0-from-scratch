@@ -9,17 +9,22 @@
   "author": "Detachment",
   "license": "MIT",
   "dependencies": {
+    "es6-promise": "^4.0.5",
     "firebase": "^3.6.5",
     "vue": "^2.1.8",
     "vue-router": "^2.1.1",
-    "vuex": "^2.1.1"
+    "vuex": "^2.1.1",
+    "vuex-router-sync": "^4.1.2"
   },
   "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015-webpack": "^6.4.3",
+    "autoprefixer": "^6.7.6",
+    "buble": "^0.15.2",
+    "buble-loader": "^0.4.1",
     "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
+    "rimraf": "^2.6.1",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^2.5.0",
     "url-loader": "^0.5.7",
     "vue-loader": "^10.0.2",
     "webpack": "^2.2.0-rc.3"
