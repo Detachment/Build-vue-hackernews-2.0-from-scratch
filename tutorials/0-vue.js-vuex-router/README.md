@@ -1,4 +1,4 @@
-# 0. Vue.js, vuex, Vue-router, Hackernews API, Firebase and ES6
+# 0. Vue.js, vuex, Vue-router, HN API, Firebase, ES6
 
 ## Preface
 
