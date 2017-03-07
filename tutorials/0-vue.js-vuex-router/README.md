@@ -6,11 +6,13 @@ As a new learner of front-end development, ever since I started to learn Vue-HN 
 
 <p align="center">
     <img src="./img/Author.gif" width="700px" alt="Origin Website">
-    <br>
-    <span>[ My Edition ]<span>
+    <br/>
+    [ My Edition ]
+    <br/>
+    <br/>
     <img src="./img/Mine.gif" width="700px" alt="Plane Vue.js">
-    <br>
-    <span>[ Offical Edition ]<span>
+    <br/>
+    [ Offical Edition ]
 </p>
 
 
