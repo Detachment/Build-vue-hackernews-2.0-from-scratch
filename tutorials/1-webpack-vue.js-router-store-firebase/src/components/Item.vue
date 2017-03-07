@@ -19,7 +19,7 @@
                 {{ item.time | timeAgo }} ago
             </span>
             <span v-if="item.type !== 'job'" class="comments-link">
-                | <router-link :to="'/item/' + item.id">{{ item.descendants }} components</router-link>
+                | <router-link :to="'/item/' + item.id">{{ item.descendants }} comments</router-link>
             </span>
         </span>
         <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
@@ -56,7 +56,7 @@
         width 80px
         text-align center
         margin-top -10px
-    . meta, .host
+    .meta, .host
         font-size .85em
         color #999
         a

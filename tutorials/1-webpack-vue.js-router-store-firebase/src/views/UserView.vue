@@ -35,7 +35,7 @@ export default {
     },
 
     // what does "preFetch" even mean?
-    preFetch: fetchUser,
+    // preFetch: fetchUser,
 
     beforeMount(){
         fetchUser(this.$store)

@@ -8,8 +8,8 @@ import ItemView from '../views/ItemView.vue'
 import UserView from '../views/UserView.vue'
 
 export default new Router ({
-    mode: 'history',
-    scrollBehavior: () => ({ y: 0 }),
+    // mode: 'history',
+    // scrollBehavior: () => ({ y: 0 }),
     routes: [
         { path: '/top/:page(\\d+)?', component: createListView('top') },
         { path: '/new/:page(\\d+)?', component: createListView('new') },

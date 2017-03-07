@@ -2,10 +2,10 @@
     <div class="news-view">
         <spinner :show="loading"></spinner>
         <div class="news-list-nav">
-            <router-link v-if="page > 1" :to="'/' + type + (page - 1)">&lt; prev</router-link>
+            <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
             <a v-else class="disabled">&lt; prev</a>
             <span>{{ page }}/{{ maxPage }}</span>
-            <router-link v-if="hasMore" :to="'/' + type + (page + 1)">more &gt;</router-link>
+            <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
             <a v-else class="disabled">more &gt;</a>
         </div>
         <transition :name="transition">
@@ -42,10 +42,10 @@ export default {
         const data = {
             loading: false,
             transition: 'slide-up',
-
-
-
-
+            // if this is the initial render, directly render with the store state
+            // otherwise this is a page switch, start with blank and wait for data load.
+            // we need these local state so that we can precisely control the timing
+            // of the transitions.
             displayedPage: isInitialRender ? Number(this.$store.state.route.params.page) || 1 : -1,
             displayedItems: isInitialRender ? this.$store.getters.activeItems: []
         }

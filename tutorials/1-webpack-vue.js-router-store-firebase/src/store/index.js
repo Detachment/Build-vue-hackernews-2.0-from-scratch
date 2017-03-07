@@ -60,6 +60,7 @@ const store = new Vuex.Store({
         FETCH_ITEMS: ({ commit, state }, { ids }) => {
             const now = Date.now()
             ids = ids.filter(id => {
+                const item = state.items[id]
                 if(!item){
                     return true
                 }
@@ -77,8 +78,8 @@ const store = new Vuex.Store({
 
         FETCH_USER: ({ commit, state }, { id }) => {
             return state.users[id]
-                ? Promise.resolve(state.user[id])
-                : fetchUser(id).then(user => commit('SET_USER'), { user })
+                ? Promise.resolve(state.users[id])
+                : fetchUser(id).then(user => commit('SET_USER', { user }))
         }
     },
 
@@ -96,7 +97,7 @@ const store = new Vuex.Store({
         },
 
         activeItems(state, getters){
-            return getters.activeIds.map(id => state.items[id].filter(_ => _))
+            return getters.activeIds.map(id => state.items[id]).filter(_ => _)
         }
     }
 })

@@ -4,18 +4,16 @@ const webpack = require('webpack')
 
 module.exports = {
     devtool: '#source-map',  // emit accurate source map for better debug
-    entry: {
-        app: './src/entry.js',
-        vendor: [
-            'es6-promise',
-            'firebase/app',
-            'firebase/database',
-            'vue',
-            'vue-router',
-            'vuex',
-            'vuex-router-sync'
-        ]
-    },
+    entry: './src/entry.js',
+        // vendor: [
+        //     'es6-promise',
+        //     'firebase/app',
+        //     'firebase/database',
+        //     'vue',
+        //     'vue-router',
+        //     'vuex',
+        //     'vuex-router-sync'
+        // ]
     output: {
         path: path.resolve(__dirname, './dist'),
         publicPath: '/dist/',
@@ -47,12 +45,12 @@ module.exports = {
             }
         ]
     },
-    plugins: [
-        // extract vendor chunks for better caching
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
-        })
-    ],
+    // plugins: [
+    //     // extract vendor chunks for better caching
+    //     new webpack.optimize.CommonsChunkPlugin({
+    //         name: 'vendor'
+    //     })
+    // ],
     performance: {
         hints: process.env.NODE_ENV === 'production' ? 'warning' : false
     }
