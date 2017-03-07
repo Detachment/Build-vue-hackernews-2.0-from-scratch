@@ -1,14 +1,18 @@
-## 0. Vue.js, vuex, Vue-router, Hackernews API, Firebase and ES6
+# 0. Vue.js, vuex, Vue-router, Hackernews API, Firebase and ES6
 
-### Preface
+## Preface
 
 As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the offical edition and my edition respectively.
 
-***[ My Edition ]***
-![Origin Website](./img/Author.gif)
+<p align="center">
+    <img src="./img/Author.gif" width="700px" alt="Origin Website">
+    <br>
+    <span>[ My Edition ]<span>
+    <img src="./img/Mine.gif" width="700px" alt="Plane Vue.js">
+    <br>
+    <span>[ Offical Edition ]<span>
+</p>
 
-***[ Offical Edition ]***
-![Plane Vue.js](./img/Mine.gif)  
 
 As we can see, almost all the features that existed in the offical example can also be implemented with just vue.js and its ecosystem. Before you start with this chapter, you should acquire some knowledge listed as below:
 - [Vue.js 2.0: The Progressive JavaScript Framework](https://vuejs.org/)
@@ -20,7 +24,7 @@ As we can see, almost all the features that existed in the offical example can a
 
 Don't get dizzy when you see so many lists, because apart from the vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
 
-### Progress
+## Progress
 
 There are some key points to bulid this project:  
 - How to get data through the offered HackerNews API without installing Firebase package?     
@@ -61,7 +65,7 @@ After you conquered all these problems and with good understanding of vue.js eco
 
 *Note: The loading order of files in the html head part affects this project a lot because of the dependency. Tested successfully in Chrome but failed in Firefox and IE. So make sure you use Chrome or replace the native file with links.*
 
-### Next
+## Next
 
 So far so good. But if we have more patience and look over this edition of the project, we would find some fatal factors. All the files are in chaos, the structure of the whole project is fragile, no consideration has been taken into account in access speed and user experience. Huge price would be paied to maintain all these.
 
