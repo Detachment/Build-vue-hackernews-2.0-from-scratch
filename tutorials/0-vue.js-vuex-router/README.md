@@ -26,7 +26,7 @@ As we can see, almost all the features that existed in the offical example can a
 
 Don't get dizzy when you see so many lists, because apart from the vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
 
-## Progress
+## Process
 
 There are some key points to bulid this project:  
 - How to get data through the offered HackerNews API without installing Firebase package?     

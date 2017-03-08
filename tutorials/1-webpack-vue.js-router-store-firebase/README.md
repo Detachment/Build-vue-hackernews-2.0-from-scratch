@@ -30,4 +30,23 @@ In order to get a smoothly process, you should acquire some basic understandings
 
 It seems too many packages you should get to learn when you just get a glimpse of the list. Don't get afriad because all you need to know about these packages is what are they for and how to config them. Believe me, it is pretty simple!
 
-## Progress
+## Process
+There are several important steps to bulid this edition, every step would be introduced briefly in the following part.
+
+### Step 1
+**Deconstruct the project.** To be honst, I should have written this step in the previous edition. When we start a project, inevitablely we should have a plan in our mind about how the project works, what kind of style the pages have and so on.
+The GIF picture shown above is a simple deconstruction of this project.
+And we can know that this project is made up with several views and each of the views is made up of several components.
+
+### Step 2
+**Fetch data.** Fetch data is the second step because it is independent of the whole structure and we can define some functions here which would be used in vuex.
+
+### Step 3
+**Bulid components and views.** Bulid components first, and then use components to bulid views. Transfer data between them with "props" option.
+
+### Step 4
+
+### Step 5
+
+## Next
+blah blah blah
