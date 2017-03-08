@@ -1,8 +1,8 @@
-# 0. Vue.js, vuex, Vue-router, HN API, Firebase, ES6
+# 0. Vue.js, Vuex, Vue-router, HN API, Firebase, ES6
 
 ## Preface
 
-As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the offical edition and my edition respectively.
+As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the my edition and offical edition respectively.
 
 <p align="center">
     <img src="./img/Author.gif" width="700px" alt="Origin Website">
