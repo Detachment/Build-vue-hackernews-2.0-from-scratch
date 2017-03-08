@@ -41,36 +41,76 @@ And we can know that this project is made up with several views and each of the 
 ### Step 2
 **Fetch data.** Fetch data is the second step because it is independent of the whole structure and we can define some functions here which would be used in vuex. The structure of your folder would look like this:
 ```
--- src
-    | -- store
-           | -- api.js    
-           | -- index.js
+| -- src
+|    | -- store
+|           | -- api.js    
+|           | -- index.js
 ```
 
 
 ### Step 3
 **Bulid components and views.** Bulid components first, and then use components to bulid views. Transfer data between them with "props" option. Stucture of the project folder would like:
 ```
--- src
-    | -- store
-    |       | -- api.js    
-    |       | -- index.js
-    |        
-    | -- components
-    |       | -- Item.vue
-    |       | -- ItemList.vue
-    |       | -- Comment.vue
-    |       | -- Spinner.vue
-    |
-    | -- views
-    |       | -- ItemView.vue
-    |       | -- UserView.vue
-    |       | -- CreateListView.js
+| -- src
+|    | -- store
+|    |       | -- api.js    
+|    |       | -- index.js
+|    |        
+|    | -- components
+|    |       | -- Item.vue
+|    |       | -- ItemList.vue
+|    |       | -- Comment.vue
+|    |       | -- Spinner.vue
+|    |
+|    | -- views
+|    |       | -- ItemView.vue
+|    |       | -- UserView.vue
+|    |       | -- CreateListView.js
 ```
 
 ### Step 4
+**Finish the left part.** In this step, we use vue-router to replace links in the components. Besides, we can define some global filters and then register them. Finally, we should sync the store and router, and then mount them to the DOM. Project folder structure would be like following:
+```
+|-- public
+|    | -- logo-48.png
+|
+|-- src
+|    | -- store
+|    |       | -- api.js    
+|    |       | -- index.js
+|    |        
+|    | -- components
+|    |       | -- Item.vue
+|    |       | -- ItemList.vue
+|    |       | -- Comment.vue
+|    |       | -- Spinner.vue
+|    |
+|    | -- views
+|    |       | -- ItemView.vue
+|    |       | -- UserView.vue
+|    |       | -- CreateListView.js
+|    |
+|    | -- filters
+|    |       | -- index.js
+|    |
+|    | -- router
+|    |       |-- index.js
+|    |
+|    | -- app.js
+|    | -- App.vue
+|    | -- entry.js
+|    | -- index.html
+```
 
 ### Step 5
+**Finally deal with webpack.** If you are totally new to [webpack](https://webpack.js.org/) , [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/getting-started/what-is-npm), you should at first spend some hours to get to know the basics. We use npm to install/uninstall packages. When initializing our project, we can either creat a file named "package.json" manually or just type `npm i` in a command line tool. Afer install all the dependencies and devDependencies, we can start to config the webpack with creating a configuration file named "webpack.config.js". To see the details, you should look into the specific file.
 
 ## Next
-blah blah blah
+We have made some progress when comparing this edition with the previous one, because this edition is more modularized and maintainable. As mentioned in the last chapter, previous edition only works in Chrome because of the dependency which is not a problem any more.
+However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.
+
+Previous edition:  
+ [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
+ 
+ Next edition:  
+ [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
