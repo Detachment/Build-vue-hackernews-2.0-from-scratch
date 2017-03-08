@@ -39,10 +39,34 @@ The GIF picture shown above is a simple deconstruction of this project.
 And we can know that this project is made up with several views and each of the views is made up of several components.
 
 ### Step 2
-**Fetch data.** Fetch data is the second step because it is independent of the whole structure and we can define some functions here which would be used in vuex.
+**Fetch data.** Fetch data is the second step because it is independent of the whole structure and we can define some functions here which would be used in vuex. The structure of your folder would look like this:
+```
+-- src
+    | -- store
+           | -- api.js    
+           | -- index.js
+```
+
 
 ### Step 3
-**Bulid components and views.** Bulid components first, and then use components to bulid views. Transfer data between them with "props" option.
+**Bulid components and views.** Bulid components first, and then use components to bulid views. Transfer data between them with "props" option. Stucture of the project folder would like:
+```
+-- src
+    | -- store
+    |       | -- api.js    
+    |       | -- index.js
+    |        
+    | -- components
+    |       | -- Item.vue
+    |       | -- ItemList.vue
+    |       | -- Comment.vue
+    |       | -- Spinner.vue
+    |
+    | -- views
+    |       | -- ItemView.vue
+    |       | -- UserView.vue
+    |       | -- CreateListView.js
+```
 
 ### Step 4
 
