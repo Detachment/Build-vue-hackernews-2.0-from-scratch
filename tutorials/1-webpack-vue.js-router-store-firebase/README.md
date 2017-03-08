@@ -12,30 +12,22 @@ So, the following animation screenshot would show us the basic functions in this
 </p>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-In order to get a smoothly process, you should acquire some basic understandings of the following tools, libraries, and plugins:
+In order to get a smoothly process, you should acquire some basic understandings of the following tools, libraries, and plugins( if listed in previous chapter, then not again. ) :
 - [Webpack 2.0: Moudle Bundler](https://webpack.js.org/)
-- [Vue.js 2.0: The Progressive JavaScript Framework](https://vuejs.org/)
-- [Vue-router 2.0: A Simple Router for Vue.js](https://router.vuejs.org/en/)
-- [Vuex 2.0: State Management Patter and Library for Vue.js Application ](http://vuex.vuejs.org/en/)
-- [Hacker News API: HackerNews API Works with Firebase](https://github.com/HackerNews/API)
-- [Learn ES2015: A detailed overview of ECMAScript 2015 features](https://babeljs.io/learn-es2015/)
+- [Package: es6-promise](https://www.npmjs.com/package/es6-promise)
+- [Package: firebase](https://www.npmjs.com/package/firebase)
+- [Package: vuex-router-sync ](https://www.npmjs.com/package/vuex-router-sync)
+- [Package: buble](https://www.npmjs.com/package/buble)
+- [Package: buble-loader](https://www.npmjs.com/package/buble-loader)
+- [Package: css-loader](https://www.npmjs.com/package/css-loader)
+- [Package: file-loader](https://www.npmjs.com/package/file-loader)
+- [Package: rimraf](https://www.npmjs.com/package/rimraf)
+- [Package: stylus](https://www.npmjs.com/package/stylus)
+- [Package: autoprefixer](https://www.npmjs.com/package/autoprefixer)
+- [Package: stylus-loader](https://www.npmjs.com/package/stylus-loader)
+- [Package: url-loader](https://www.npmjs.com/package/url-loader)
+- [Package: vue-loader](https://www.npmjs.com/package/vue-loader)
+
+It seems too many packages you should get to learn when you just get a glimpse of the list. Don't get afriad because all you need to know about these packages is what are they for and how to config them. Believe me, it is pretty simple!
+
+## Progress
