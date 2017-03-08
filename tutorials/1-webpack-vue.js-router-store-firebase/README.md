@@ -6,7 +6,7 @@ In this chapter, we will bulid another edition of Vue-HN in which we would start
 So, the following animation screenshot would show us the basic functions in this edition and some simple deconstruction of the project.
 
 <p align="center">
-    <img src="http://o9ybnkuir.bkt.clouddn.com/vue-hackernews/1-edition/first_edition.gif" width="700px" alt="Basic functions and simple deconstruction" >
+    <img src="./public/first_edition.gif" width="700px" alt="Basic functions and simple deconstruction" >
     <br/>
     [Basic Functions and Simple Deconstruction]
 </p>
