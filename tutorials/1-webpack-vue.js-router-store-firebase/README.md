@@ -103,14 +103,15 @@ And we can know that this project is made up with several views and each of the 
 ```
 
 ### Step 5
-**Finally deal with webpack.** If you are totally new to [webpack](https://webpack.js.org/) , [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/getting-started/what-is-npm), you should at first spend some hours to get to know the basics. We use npm to install/uninstall packages. When initializing our project, we can either creat a file named "package.json" manually or just type `npm i` in a command line tool. Afer install all the dependencies and devDependencies, we can start to config the webpack with creating a configuration file named "webpack.config.js". To see the details, you should look into the specific file.
+**Finally deal with webpack.** If you are totally new to [webpack](https://webpack.js.org/) , [node.js](https://nodejs.org/en/) and [npm](https://docs.npmjs.com/getting-started/what-is-npm), you should at first spend some hours to get to know the basics. We use npm to install/uninstall packages. When initializing our project, we can either creat a file named "package.json" manually or just type `npm init` in a command line tool. Afer install all the dependencies and devDependencies, we can start to config the webpack with creating a configuration file named "webpack.config.js". To see the details, you should look into the specific file.
 
 ## Next
 We have made some progress when comparing this edition with the previous one, because this edition is more modularized and maintainable. As mentioned in the last chapter, previous edition only works in Chrome because of the dependency which is not a problem any more.
-However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.
+However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.  
+*Note: You have to install the lastest version of node.js before you use npm.*
 
 Previous edition:  
  [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
- 
+
  Next edition:  
  [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
