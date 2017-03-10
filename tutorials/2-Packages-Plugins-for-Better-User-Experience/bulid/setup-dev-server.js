@@ -6,6 +6,7 @@ const serverConfig = require('./webpack.server.config')
 
 module.exports = function setupDevServer(app, opts) {
     // modify client config to work with hot middleware
+    // for detials:  https://www.npmjs.com/package/webpack-hot-middleware
     clientConfig.entry.app = ['webpack-hot-middleware/client', clientConfig.entry.app]
     clientConfig.output.filename = '[name].js'
     clientConfig.plugins.push(
@@ -37,6 +38,8 @@ module.exports = function setupDevServer(app, opts) {
     app.use(require('webpack-hot-middleware')(clientCompiler))
 
     // watch and update server renderer
+    // for details: https://webpack.js.org/api/node/
+    // and check: https://webpack.js.org/api/node/#stats-object
     const serverCompiler = webpack(serverConfig)
     const mfs = new MFS()
     const outputPath = path.join(serverConfig.output.path, serverConfig.output.filename)
