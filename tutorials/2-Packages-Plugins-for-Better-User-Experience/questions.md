@@ -35,3 +35,12 @@ serverCompiler.watch({}, (err, stats) => {
     opts.bundleUpdated(mfs.readFileSync(outputPath, 'utf-8'))
 })
 ```
+4. A little problem here:
+```javascript
+// in webpack.client.config.js:
+// this is needed in webpack 2 for minifying CSS?
+// this is not for css, instead for global/shared loader options?
+new webpack.LoaderOptionsPlugin({
+    minimize: true
+}),
+```
