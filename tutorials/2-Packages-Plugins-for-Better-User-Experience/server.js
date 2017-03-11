@@ -107,9 +107,9 @@ app.get('*', (req, res) => {
         console.error(`error during render: ${req.url}`)
         console.error(err)
     })
+})
 
-    const port = process.env.PORT || 8080
-    app.listen(port, () => {
-        console.log(`server started at localhost: ${port}`);
-    })
+const port = process.env.PORT || 8080
+app.listen(port, () => {
+    console.log(`server started at localhost: ${port}`);
 })
