@@ -1,15 +1,8 @@
-import Firebase from "firebase"
-import 'firebase/database'
+// this is aliased in webpack config
+import api from 'create-api'
 
-const config = {
-    databaseURL: 'https://hacker-news.firebaseio.com'
-}
-const version = '/v0'
-
-Firebase.initializeApp(config)
-const api = Firebase.database().ref(version)
-
-
+// warm the front page cache every 15 mins
+// make sure to do this only once across all requests
 if(api.onServer && !api.warmCacheStarted){
     api.warmCacheStarted = true
     warmCache()
