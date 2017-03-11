@@ -23,7 +23,7 @@ if(process.__API__){
 
     // cache the latest story ids
     api.cachedIds = {}
-    ['top', 'new', 'show', 'ask', 'job'].forEach(type => {
+    ;['top', 'new', 'show', 'ask', 'job'].forEach(type => {
         api.child(`${type}stories`).on('value', snapshot => {
             api.cachedIds[type] = snapshot.val()
         })
