@@ -2,4 +2,6 @@ tutorials/1-webpack-vue.js-router-store-firebase/node_modules/
 tutorials/1-webpack-vue.js-router-store-firebase/dist/
 tutorials/2-Packages-Plugins-for-Better-User-Experience/node_modules/
 tutorials/2-Packages-Plugins-for-Better-User-Experience/dist/
+tutorials/3-Change-the-Project-as-I-like/dist/
+tutorials/3-Change-the-Project-as-I-like/node_modules/
 tutorials/0-vue.js-vuex-router/test.html
