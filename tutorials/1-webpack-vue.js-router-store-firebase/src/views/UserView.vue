@@ -9,7 +9,7 @@
                 <li v-if="user.about" v-html="user.about" class="about"></li>
             </ul>
             <p class="links">
-                <a :href="'https://news.ycombinator.com/submitted?id=' + user.id">submission</a> | 
+                <a :href="'https://news.ycombinator.com/submitted?id=' + user.id">submission</a> |
                 <a :href="'https://news.ycombinator.com/threads?id=' + user.id">comment</a>
             </p>
         </template>
@@ -35,7 +35,7 @@ export default {
     },
 
     // what does "preFetch" even mean?
-    // preFetch: fetchUser,
+    preFetch: fetchUser,
 
     beforeMount(){
         fetchUser(this.$store)
