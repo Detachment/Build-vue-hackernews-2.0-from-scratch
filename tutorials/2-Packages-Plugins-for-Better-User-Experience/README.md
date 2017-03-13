@@ -26,3 +26,20 @@ Just as the name implies, when we are in the developing process, we will use the
 Also check the following links, and then you can get a better understanding of `setup-dev-server.js` file:  
 [webpack node API](https://webpack.js.org/api/node/)  
 [webpack API: stats-object](https://webpack.js.org/api/node/#stats-object)  
+In production mode, the node server and client side would render bundles that packed by webpack. Some extra plugins will be utilized in this mode to make files size samller and so on. Besides, some config options are also different. To get details, check `webpack.client.config.js` and  `webpack.base.config.js`. Following are two examples:
+[extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin)  
+[sw-precache-webpack-plugin](https://www.npmjs.com/package/sw-precache-webpack-plugin)  
+3. **Server side and Client side**
+We should config webpack both in server side and client side to make them work together for a better performance. To config webpack on server side, we can refer to offical document:
+[vue-server-renderer](https://www.npmjs.com/package/vue-server-renderer). Another key point for both sides is to keep the initial state the same with each other. We can search for details in `server-entry.js` and `client-entry.js`.  
+
+4. **What exactly happens when we type `npm run dev` in command propmt?**  
+To be continued.
+
+## Next
+Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.
+
+Editions:  
+ [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
+[1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
+[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)

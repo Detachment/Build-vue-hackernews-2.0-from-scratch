@@ -110,8 +110,7 @@ We have made some progress when comparing this edition with the previous one, be
 However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.  
 *Note: You have to install the lastest version of node.js before you use npm.*
 
-Previous edition:  
- [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
-
- Next edition:  
- [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
+Editions:  
+ [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
+[1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
+[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
