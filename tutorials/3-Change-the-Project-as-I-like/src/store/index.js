@@ -42,6 +42,12 @@ const store = new Vuex.Store({
     },
 
     actions: {
+        // make the fetched list data sorted based on score
+        SORT_LIST_DATA: ({ commit, dispatch, state}, { type }) => {
+            return dispatch('FETCH_LIST_DATA', { type })
+                .then(items => Object.values(items).sort(item => item.score))
+        },
+
         // ensure data for rendering given list type
         FETCH_LIST_DATA: ({ commit, dispatch, state }, { type }) => {
             commit('SET_ACTIVE_TYPE', { type })
