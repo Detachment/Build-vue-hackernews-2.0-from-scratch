@@ -16,6 +16,19 @@ export function timeAgo(time){
     }
 }
 
+export function time(milliseconds) {
+    milliseconds = Date.now() + milliseconds
+    const date = new Date(milliseconds)
+    const Y = date.getFullYear() + '-'
+        , M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 ) + '-'
+        , D = (date.getDay() < 10 ? '0' + date.getDay() : date.getDay() ) + ' '
+        , h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours() ) + ':'
+        , m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() ) + ':'
+        , s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds() )
+
+    return Y + M + D + "\n " + h + m + s
+}
+
 function pluralize(time, label) {
     if(time == 1){
         return time + label

@@ -7,6 +7,7 @@
             <span>{{ page }}/{{ maxPage }}</span>
             <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
             <a v-else class="disabled">more &gt;</a>
+            <button type="button" @click="Sort()">Sort</button>
         </div>
         <transition :name="transition">
             <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
@@ -63,9 +64,6 @@ export default {
         },
         hasMore(){
             return this.page < this.maxPage
-        },
-        initial(){
-            return this.displayedItems;
         }
     },
 
@@ -110,8 +108,9 @@ export default {
                 this.loading = false
             })
         },
+
         Sort(){
-            this.$store.dispatch('SORT_LIST_DATA', { type: this.type })
+            this.$store.getters.activeItemsSort
         }
     }
 }

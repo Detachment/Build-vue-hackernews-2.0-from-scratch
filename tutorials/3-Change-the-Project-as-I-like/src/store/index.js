@@ -43,10 +43,10 @@ const store = new Vuex.Store({
 
     actions: {
         // make the fetched list data sorted based on score
-        SORT_LIST_DATA: ({ commit, dispatch, state}, { type }) => {
-            return dispatch('FETCH_LIST_DATA', { type })
-                .then(items => Object.values(items).sort(item => item.score))
-        },
+        // SORT_LIST_DATA: ({ commit, dispatch, state}, { type }) => {
+        //     return dispatch('FETCH_LIST_DATA', { type })
+        //         .then(items => Object.values(items).sort(item => item.score))
+        // },
 
         // ensure data for rendering given list type
         FETCH_LIST_DATA: ({ commit, dispatch, state }, { type }) => {
@@ -103,8 +103,12 @@ const store = new Vuex.Store({
         },
 
         activeItems(state, getters){
-            return getters.activeIds.map(id => state.items[id]).sort((A, B) => {
-                return A.descendants - B.descendants
+            return getters.activeIds.map(id => state.items[id])
+        },
+
+        activeItemsSort(state, getters){
+            return getters.activeItems.sort((A, B) => {
+                return A.score - B.score
             })
         }
     }
