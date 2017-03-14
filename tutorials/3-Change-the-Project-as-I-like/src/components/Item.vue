@@ -19,9 +19,9 @@
                 </span>
             </template>
         </span>
-        <span class="label" v-if="item.type !== 'story'">{{ item.type }}</span>
-        <span v-if="item.type !== 'job'" class="comments-link">
-            | <router-link :to="'/item/' + item.id">{{ item.descendants }} comments</router-link>
+        <!-- <span class="label" v-if="item.type !== 'story'"> {{ item.type }}</span> -->
+        <span v-if="item.type !== 'job'" class="comments">
+            <router-link :to="'/item/' + item.id">{{ item.descendants }}</router-link>
         </span>
         <span class="time">{{ item.time | time }}</span>
         <span class="score">{{ item.score }}</span>
@@ -44,14 +44,14 @@
 <style lang="stylus">
 .news-item
     background-color #fff
-    padding 20px 110px 20px 20px
+    padding 20px 260px 20px 30px
     border-bottom 1px solid #eee
     position relative
     line-height 20px
-    .score, .time
+    .score, .time, .comments
         color #41b883
         font-size 1.1em
-        font-weight 700
+        font-weight 500
         position absolute
         top 50%
         right 0
@@ -60,20 +60,31 @@
         margin-top -10px
 
     .time
-        color #41b883
         font-size 0.8em
         right 80px
         margin-top -20px
 
-    .meta, .host
-        font-size .85em
-        color #999
+    .comments
+        right 160px
         a
-            color #999
-            text-decoration underline
+            color #41b883
             &:hover
-                color #41b883
+                color #999
+
     .title
+        display inline-block
+        max-width 520px
+        white-space nowrap
+        overflow hidden
+        text-overflow ellipsis
+        .meta .host
+            font-size 1em
+            color #999
+            a
+                color #999
+                text-decoration underline
+                &:hover
+                    color #41b883
         a
             &:hover
                 color #41b883

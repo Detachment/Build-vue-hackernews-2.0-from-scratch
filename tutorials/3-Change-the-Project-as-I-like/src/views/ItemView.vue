@@ -107,7 +107,7 @@ export default {
     position relative
     .spinner
         position absolute
-        top 0
+        top 6px
         right 0
         bottom auto
 
