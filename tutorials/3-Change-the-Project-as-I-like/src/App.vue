@@ -97,8 +97,8 @@ a
     .header
         .inner
             padding 15px
-    a
-        margin-right 1em
-    .github
-        display none
+            a
+                margin-right 1em
+            .github
+                display none
 </style>

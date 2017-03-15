@@ -17,11 +17,11 @@ export function timeAgo(time){
 }
 
 export function time(milliseconds) {
-    milliseconds = Date.now() + milliseconds
-    const date = new Date(milliseconds)
+    const readTime = milliseconds * 1000
+    const date = new Date(readTime)
     const Y = date.getFullYear() + '-'
         , M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1 ) + '-'
-        , D = (date.getDay() < 10 ? '0' + date.getDay() : date.getDay() ) + ' '
+        , D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate() ) + ' '
         , h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours() ) + ':'
         , m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes() ) + ':'
         , s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds() )

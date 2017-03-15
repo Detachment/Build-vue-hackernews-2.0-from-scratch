@@ -44,13 +44,13 @@
 <style lang="stylus">
 .news-item
     background-color #fff
-    padding 20px 260px 20px 30px
+    padding 10px 260px 10px 30px
     border-bottom 1px solid #eee
     position relative
     line-height 20px
     .score, .time, .comments
         color #41b883
-        font-size 1.1em
+        font-size 1em
         font-weight 500
         position absolute
         top 50%
@@ -72,13 +72,8 @@
                 color #999
 
     .title
-        display inline-block
-        max-width 520px
-        white-space nowrap
-        overflow hidden
-        text-overflow ellipsis
         .meta .host
-            font-size 1em
+            font-size 1.1em
             color #999
             a
                 color #999
@@ -88,4 +83,11 @@
         a
             &:hover
                 color #41b883
+
+@media (max-width 600px)
+    .news-item
+        padding-right 80px
+        .time, .comments
+            display none
+
 </style>
