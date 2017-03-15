@@ -72,14 +72,15 @@
                 color #999
 
     .title
-        .meta .host
-            font-size 1.1em
-            color #999
-            a
+        .meta
+            .host, .by
+                font-size 1em
                 color #999
-                text-decoration underline
-                &:hover
-                    color #41b883
+                a
+                    color #999
+                    text-decoration underline
+                    &:hover
+                        color #41b883
         a
             &:hover
                 color #41b883

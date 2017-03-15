@@ -2,12 +2,25 @@
     <div class="news-view">
         <spinner :show="loading"></spinner>
         <div class="news-list-nav">
-            <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
-            <a v-else class="disabled">&lt; prev</a>
-            <span>{{ page }}/{{ maxPage }}</span>
-            <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
-            <a v-else class="disabled">more &gt;</a>
-            <button type="button" @click="Sort()">Sort</button>
+            <span class="page">
+                <router-link v-if="page > 1" :to="'/' + type + '/' + (page - 1)">&lt; prev</router-link>
+                <a v-else class="disabled">&lt; prev</a>
+                <span>{{ page }}/{{ maxPage }}</span>
+                <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
+                <a v-else class="disabled">more &gt;</a>
+            </span>
+            <a class="nav-comments">
+                <span>comments</span>
+                <img src="" alt="">
+            </a>
+            <a class="nav-time">
+                <span>time</span>
+                <img src="" alt="">
+            </a>
+            <a class="nav-score">
+                <span>score</span>
+                <img src="" alt="">
+            </a>
         </div>
         <transition :name="transition">
             <div class="news-list" :key="displayedPage" v-if="displayedPage > 0">
@@ -120,23 +133,42 @@ export default {
 .news-view
   padding-top 45px
 
-.news-list-nav, .news-list
-  background-color #fff
+.news-list
   border-radius 2px
 
 .news-list-nav
-  padding 15px 30px
-  position fixed
-  text-align center
-  top 55px
+  max-width 800px
+  margin 0 auto
+  background-color #fff
+  padding 15px 0px
+  position absolute
+  top 25px
   left 0
   right 0
   z-index 998
-  box-shadow 0 1px 2px rgba(0,0,0,.1)
-  a
+  border-bottom 1px solid #eee
+  .page
+    display inline-block
+    text-align center
+    font-weight 500
+    margin-left 150px
+    .disabled
+      color #ccc
+  .page a
     margin 0 1em
-  .disabled
-    color #ccc
+  .nav-score, .nav-time, .nav-comments
+    position absolute
+    top 50%
+    right 0
+    font-weight 500
+    font-size 1em
+    width 80px
+    text-align center
+    margin-top -10px
+  .nav-time
+    right 80px
+  .nav-comments
+    right 160px
 
 .news-list
   position absolute
@@ -169,6 +201,20 @@ export default {
   transform translate(30px, 0)
 
 @media (max-width 600px)
-  .news-list
-    margin 10px 0
+  .news-view
+    .news-list-nav
+      .nav-comments, .nav-time
+        display none
+
+@media (max-width 500px)
+  .news-view
+    .news-list-nav
+      .page
+        margin-left 100px
+
+@media (max-width 400px)
+  .news-view
+    .news-list-nav
+      .page
+        margin-left 50px
 </style>
