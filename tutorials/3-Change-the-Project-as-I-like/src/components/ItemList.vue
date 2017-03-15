@@ -9,17 +9,14 @@
                 <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
                 <a v-else class="disabled">more &gt;</a>
             </span>
-            <a class="nav-comments">
-                <span>comments</span>
-                <img src="" alt="">
+            <a class="nav-comments" :class="{ click: descendantsClicked }" @click="Sort('descendants')">
+                <span>marks</span>
             </a>
-            <a class="nav-time">
+            <a class="nav-time" :class="{ click: timeClicked }" @click="Sort('time')">
                 <span>time</span>
-                <img src="" alt="">
             </a>
-            <a class="nav-score">
+            <a class="nav-score" :class="{ click: scoreClicked }" @click="Sort('score')">
                 <span>score</span>
-                <img src="" alt="">
             </a>
         </div>
         <transition :name="transition">
@@ -55,6 +52,9 @@ export default {
     data(){
         const data = {
             loading: false,
+            scoreClicked: false,
+            timeClicked: false,
+            descendantsClicked: false,
             transition: 'slide-up',
             // if this is the initial render, directly render with the store state
             // otherwise this is a page switch, start with blank and wait for data load.
@@ -100,6 +100,9 @@ export default {
     watch: {
         page(to, from){
             this.loadItems(to, from)
+            this.scoreClicked = false
+            this.timeClicked = false
+            this.descendantsClicked = false
         }
     },
 
@@ -122,8 +125,13 @@ export default {
             })
         },
 
-        Sort(){
-            this.$store.getters.activeItemsSort
+        Sort(order){
+            this.$store.getters.activeItemsSort(order)
+            this.scoreClicked = false
+            this.timeClicked = false
+            this.descendantsClicked = false
+            let s = order + 'Clicked'
+            this[s] = true
         }
     }
 }
@@ -147,6 +155,7 @@ export default {
   right 0
   z-index 998
   border-bottom 1px solid #eee
+  border-top 1px solid #eee
   .page
     display inline-block
     text-align center
@@ -162,9 +171,17 @@ export default {
     right 0
     font-weight 500
     font-size 1em
-    width 80px
+    width 72px
     text-align center
     margin-top -10px
+    padding 0 4px
+    background url(../../public/arrow.png) no-repeat 65px -94px
+    &:hover
+        background url(../../public/arrow.png) no-repeat 65px -134px
+        cursor pointer
+  .click
+        color #41b883
+        background url(../../public/arrow.png) no-repeat 65px -134px
   .nav-time
     right 80px
   .nav-comments

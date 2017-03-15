@@ -107,9 +107,11 @@ const store = new Vuex.Store({
         },
 
         activeItemsSort(state, getters){
-            return getters.activeItems.sort((A, B) => {
-                return A.score - B.score
-            })
+            return (m) => {
+                return getters.activeItems.sort((A, B) => {
+                    return A[m] - B[m]
+                })
+            }
         }
     }
 })
