@@ -111,7 +111,8 @@ However, the project is still far from perfect. In the next edition, we would ta
 *Note: You have to install the lastest version of node.js before you use npm.*
 
 Editions:  
- [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
+[Introductioin](/README.md)  
+[0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)    
 [3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)

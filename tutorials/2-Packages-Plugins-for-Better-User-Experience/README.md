@@ -40,7 +40,8 @@ To be continued.
 Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.
 
 Editions:  
- [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
+[Introductioin](/README.md)   
+[0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
 [3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)

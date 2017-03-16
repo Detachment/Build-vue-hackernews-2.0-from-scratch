@@ -29,7 +29,7 @@ It is a pretty nomal feature in many websites to rank things in different order.
             }
         }
     ```
-More codes are added in ItemList.vue file. If you are interested in how it works you should have a dive into this file.
+    More codes are added in ItemList.vue file. If you are interested in how it works you should have a dive into this file.
 
 3. **Also responsive in different media**  
 To make this website also responsive, I tweaked the CSS part. You can see the layout of the front page is different from the original. And to make it more elegant, some information are omitted. This can be seen in the above GIF animation.
@@ -42,7 +42,8 @@ All four editions of this project are completed now. During the process of makin
 
 
 Editions:  
- [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
+[Introductioin](/README.md)  
+[0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
 [3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
