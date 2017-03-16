@@ -16,25 +16,25 @@ are more Vue.js.
 
 2. **List items in order based on time, scores and comments**  
 It is a pretty nomal feature in many websites to rank things in different order. So I add the feature to this edition, codes related to this feature are:
-```javascript
-// store/index.js
-getters: {
-    // Add this function to getters. This function is uesd
-    // to change the order of items in activeItems.
-    activeItemsSort(state, getters){
-        return (m) => {
-            return getters.activeItems.sort((A, B) => {
-                return A[m] - B[m]
-            })
+    ```javascript
+    // store/index.js
+    getters: {
+        // Add this function to getters. This function is uesd
+        // to change the order of items in activeItems.
+        activeItemsSort(state, getters){
+            return (m) => {
+                return getters.activeItems.sort((A, B) => {
+                    return A[m] - B[m]
+                })
+            }
         }
-    }
-```
+    ```
 More codes are added in ItemList.vue file. If you are interested in how it works you should have a dive into this file.
 
 3. **Also responsive in different media**  
 To make this website also responsive, I tweaked the CSS part. You can see the layout of the front page is different from the original. And to make it more elegant, some information are omitted. This can be seen in the above GIF animation.
 
-4. **Add `toTop` button in Comment.vue **  
+4. **Add `toTop` button in Comment.vue**  
 There are too many comments in some items. So I think it maybe better to add a `toTop` button in this situation.
 
 ## End
