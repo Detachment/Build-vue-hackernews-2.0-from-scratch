@@ -2,48 +2,47 @@
 
 ## Preface
 
+In this edition, I will change the style of Vue-HN to be more Vue.js, at least in the visual respect. The GIF below is the final editon of mine, you can have a visit to the original website: [Vue-HackerNews 2.0](https://vue-hn.now.sh/top). The details of the differences will be discussed in Process part.
 <p align="center">
-    <img src="./public/last-edition-resize.gif" width="700px" alt="My edition of Vue-HackerNews" >
+    <img src="./public/last-edition-resize.gif" width="700px" alt="Last Edition of Vue-HackerNews" >
     <br/>
     [Last Edition of Vue-HackerNews]
 </p>
 
 ## Process
 1. **Make this webpage more Vue.js**  
-[In some situations](https://vuejs.org/v2/guide/ssr.html), you may want to use SSR (Server-Side Rendering) in your project to improve the performance. Our project is among one of these cases.  
-So, we need a serve at first. In this edition, we use one of the most popular web framework for Node.js: Express. Scan the "Getting started" part, you will have a basic understanding of Express.  
-[Express: Fast, unopinionated, minimalist web framework for Node.js](http://expressjs.com/)  
-Besides, you should know some APIs in Node.js, like Path, File System, and Process. Honestly, knowing how to use these APIs is enough and this is deadly simple. Click this link to get more information:  
-[Node.js v7.7.2 Documentation](https://nodejs.org/api/)  
-Then come to the SSR, there is a package named "vue-server-renderer" for this.  
-[vue-server-renderer](https://www.npmjs.com/package/vue-server-renderer#api)  
-Apart from above, some other packages are used to make this project better:  
-[serve-favicon: Node.js middleware for serving a favicon](https://www.npmjs.com/package/serve-favicon)  
-[compression: Node.js compression middleware.](https://www.npmjs.com/package/compression)  
-[serialize-javascript: Serialize JavaScript to a superset of JSON](https://www.npmjs.com/package/serialize-javascript)   
-After finished reading all of these files, it will not be a problem for you to understand the `server.js` file. This is improtant because this file is the entry of the node server.    
+The most obvious change that take place in this website is the background color. I replaced all the orange (`#ff6600`) with light green (`#41b883`), because the former represent HackerNews style and the latter
+are more Vue.js.
 
-2. **Production mode and Development mode**  
-The main differences between these two modes are with hot-replacement and hot-reload or without. If in production mode, webpack would not watch the file change. Here we talk about development mode first.  
-Just as the name implies, when we are in the developing process, we will use the development mode. In this mode we care less about the file size, file number and access speed, which will make some differences in configuring webpack. We can use `webpack-hot-middleware` and `webpack-dev-middleware` packages to make our project capable of hot-reload and hot-replacement. Documents as following:    
-[webpack-hot-middleware](https://www.npmjs.com/package/webpack-hot-middleware)  
-Also check the following links, and then you can get a better understanding of `setup-dev-server.js` file:  
-[webpack node API](https://webpack.js.org/api/node/)  
-[webpack API: stats-object](https://webpack.js.org/api/node/#stats-object)  
-In production mode, the node server and client side would render bundles that packed by webpack. Some extra plugins will be utilized in this mode to make files size samller and so on. Besides, some config options are also different. To get details, check `webpack.client.config.js` and  `webpack.base.config.js`. Following are two examples:   
-[extract-text-webpack-plugin](https://www.npmjs.com/package/extract-text-webpack-plugin)  
-[sw-precache-webpack-plugin](https://www.npmjs.com/package/sw-precache-webpack-plugin)  
-3. **Server side and Client side**  
-We should config webpack both in server side and client side to make them work together for a better performance. To config webpack on server side, we can refer to offical document:
-[vue-server-renderer](https://www.npmjs.com/package/vue-server-renderer). Another key point for both sides is to keep the initial state the same with each other. We can search for details in `server-entry.js` and `client-entry.js`.  
+2. **List items in order based on time, scores and comments**  
+It is a pretty nomal feature in many websites to rank things in different order. So I add the feature to this edition, codes related to this feature are:
+```javascript
+// store/index.js
+getters: {
+    // Add this function to getters. This function is uesd
+    // to change the order of items in activeItems.
+    activeItemsSort(state, getters){
+        return (m) => {
+            return getters.activeItems.sort((A, B) => {
+                return A[m] - B[m]
+            })
+        }
+    }
+```
+More codes are added in ItemList.vue file. If you are interested in how it works you should have a dive into this file.
 
-4. **What exactly happens when we type `npm run dev` in command propmt?**  
-To be continued.
+3. **Also responsive in different media**  
+To make this website also responsive, I tweaked the CSS part. You can see the layout of the front page is different from the original. And to make it more elegant, some information are omitted. This can be seen in the above GIF animation.
 
-## Next
-Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.
+4. **Add `toTop` button in Comment.vue **  
+There are too many comments in some items. So I think it maybe better to add a `toTop` button in this situation.
+
+## End
+All four editions of this project are completed now. During the process of making this edition, I enjoyed the happiness of thinking and creating. I hope you all can also experience this.
+
 
 Editions:  
  [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
-[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
+[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
+[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)

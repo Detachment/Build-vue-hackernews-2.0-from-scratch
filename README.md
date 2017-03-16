@@ -15,4 +15,5 @@ Notices: Vue-HN is short for vue-hackernews-2.0 in all the after chapters to hel
 
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
-[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)
+[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
+[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
