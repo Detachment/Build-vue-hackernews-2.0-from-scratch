@@ -42,7 +42,7 @@ All four editions of this project are completed now. During the process of makin
 
 
 Editions:  
-[Introductioin](/README.md)  
+[Introductioin](/)  
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
