@@ -159,4 +159,9 @@ export default {
     .item-view-header
         h1
             font-size 1.25em
+
+@media (max-width 1000px)
+    .item-view
+        .toTop
+            display none
 </style>

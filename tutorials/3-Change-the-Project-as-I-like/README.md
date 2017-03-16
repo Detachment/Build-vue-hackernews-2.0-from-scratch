@@ -1,11 +1,15 @@
-# 2. Server, Packages and Plugins for Better Performance
+# 3. Change the Project as I like
 
 ## Preface
-This edition can be the most difficult part for me in the whole project.
-So many plugins, packages and new techniques make the project extremely complex for me. I have tried my best to figure this out and in the following part I will share what I have got with you.
+
+<p align="center">
+    <img src="./public/last-edition.gif" width="700px" alt="My edition of Vue-HackerNews" >
+    <br/>
+    [Last Edition of Vue-HackerNews]
+</p>
 
 ## Process
-1. **Way to Node server: `server.js`**  
+1. **Make this webpage more Vue.js**  
 [In some situations](https://vuejs.org/v2/guide/ssr.html), you may want to use SSR (Server-Side Rendering) in your project to improve the performance. Our project is among one of these cases.  
 So, we need a serve at first. In this edition, we use one of the most popular web framework for Node.js: Express. Scan the "Getting started" part, you will have a basic understanding of Express.  
 [Express: Fast, unopinionated, minimalist web framework for Node.js](http://expressjs.com/)  
