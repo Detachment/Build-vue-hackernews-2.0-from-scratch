@@ -3,7 +3,7 @@
 ## Preface
 
 <p align="center">
-    <img src="./public/last-edition.gif" width="700px" alt="My edition of Vue-HackerNews" >
+    <img src="./public/last-edition-resize.gif" width="700px" alt="My edition of Vue-HackerNews" >
     <br/>
     [Last Edition of Vue-HackerNews]
 </p>
