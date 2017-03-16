@@ -24,6 +24,10 @@
                 </ul>
             </div>
         </template>
+        <a class="toTop" v-if="isShow" href="javascript:;" @click="toTop()">
+            <div class="top"></div>
+            <div class="below"></div>
+        </a>
     </div>
 </template>
 
@@ -61,7 +65,8 @@ export default {
     components: { Spinner, Comment },
     data () {
         return {
-            loading: true
+            loading: true,
+            isShow: true
         }
     },
     computed: {
@@ -76,6 +81,12 @@ export default {
         fetchItemAndComments(this.$store).then(() => {
             this.loading = false
         })
+    },
+
+    methods: {
+        toTop(){
+            window.scrollTo(0, 0)
+        }
     }
 }
 </script>
@@ -110,6 +121,34 @@ export default {
         top 6px
         right 0
         bottom auto
+
+.toTop
+    display block
+    width 40px
+    height 40px
+    background-color #41b883
+    opacity 0.4
+    border-radius 3px
+    position fixed
+    right 30px
+    bottom 50px
+    &:hover
+        opacity 1
+    .top
+        position absolute
+        margin 0 10px
+        width 0
+        height 0
+        border 10px solid transparent
+        border-bottom-color #fff
+    .below
+        position absolute
+        left 16px
+        top 20px
+        width 8px
+        height 10px
+        border-radius 1px
+        background-color #fff
 
 .comment-children
     list-style-type none

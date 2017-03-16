@@ -9,7 +9,7 @@
                 <router-link v-if="hasMore" :to="'/' + type + '/' + (page + 1)">more &gt;</router-link>
                 <a v-else class="disabled">more &gt;</a>
             </span>
-            <a class="nav-comments" :class="{ click: descendantsClicked }" @click="Sort('descendants')">
+            <a v-if=" type !== 'job'" class="nav-comments" :class="{ click: descendantsClicked }" @click="Sort('descendants')">
                 <span>marks</span>
             </a>
             <a class="nav-time" :class="{ click: timeClicked }" @click="Sort('time')">
