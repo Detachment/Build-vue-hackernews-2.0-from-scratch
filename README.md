@@ -1,7 +1,17 @@
 # Bulid vue-hackernews-2.0 from Scratch(work in progress)
 
+<p align="center">
+    <a href="https://vuejs.org/" style="margin-right: 10px; ">
+        <img src="/website-icon/vue.favico.png" width="48px">
+    </a>
+    <a href="https://webpack.js.org/" style="margin-right: 10px; ">
+        <img src="/website-icon/webpack.favicon.ico" width="48px">
+    </a>
+    <a href="https://nodejs.org/en/" style="margin-right: 10px; ">
+        <img src="/website-icon/node.png" width="48px">
+    </a>
 
-[![Webpack](/website-icon/webpack.favicon.ico)](https://webpack.js.org/)
+</p>
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
