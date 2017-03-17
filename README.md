@@ -1,4 +1,4 @@
-# Bulid vue-hackernews-2.0 from Scratch(work in progress)
+# Bulid vue-hackernews-2.0 from Scratch
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
@@ -57,5 +57,5 @@ In this edition, I will change the style of Vue-HN to be more Vue.js, at least i
 
 
 ## License
-Copyright (c) 2017 Copyright Holder All Rights Reserved.
+Copyright (c) 2017 Copyright Holder All Rights Reserved.  
 MIT (http://opensource.org/licenses/mit-license.php)
