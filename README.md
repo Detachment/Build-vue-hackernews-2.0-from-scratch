@@ -1,26 +1,5 @@
 # Bulid vue-hackernews-2.0 from Scratch(work in progress)
 
-<p align="center">
-    <a href="https://vuejs.org/" style="margin-right: 10px; ">
-        <img src="/website-icon/vue.favico.png" width="64px" alt="vuejs">
-    </a>
-    <a href="https://webpack.js.org/" style="margin-right: 10px; ">
-        <img src="/website-icon/webpack.favicon.ico" width="64px" alt="webpack">
-    </a>
-    <a href="https://nodejs.org/en/" style="margin-right: 10px; ">
-        <img src="/website-icon/node.png" width="64px" alt="node.js">
-    </a>
-    <a href="https://firebase.google.com/" style="margin-right: 10px; ">
-        <img src="/website-icon/firebase.favicon.png" width="64px" alt="firebase">
-    </a>
-    <a href="https://news.ycombinator.com/" style="margin-right: 10px; ">
-        <img src="/website-icon/hn.favicon.ico" width="64px" alt="HackerNews">
-    </a>
-    <a href="https://www.npmjs.com/" style="margin-right: 10px; ">
-        <img src="/website-icon/npm.png" width="64px" alt="npm">
-    </a>
-</p>
-
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
 As a new learner of front-end develop and vue.js, I find it a bit difficult to understand the offical example: vue-hackernews-2.0. Meanwhile, the complexity of this example really attracts me. So I spend some time on figuring out how it works and with this tutorial I will show you how I rebulid it step-by-step.
@@ -68,9 +47,15 @@ In this edition, I will change the style of Vue-HN to be more Vue.js, at least i
 </p>
 
 
+
 ## Table of contents
 
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
-[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
+[3-Change-the-Project-as-I-like](/tutorials/3-Change-the-Project-as-I-like)
+
+
+## License
+Copyright (c) 2017 Copyright Holder All Rights Reserved.
+MIT (http://opensource.org/licenses/mit-license.php)

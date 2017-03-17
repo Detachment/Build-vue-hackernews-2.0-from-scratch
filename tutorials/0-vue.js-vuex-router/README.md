@@ -67,6 +67,17 @@ After you conquered all these problems and with good understanding of vue.js eco
 
 *Note: The loading order of files in the html head part affects this project a lot because of the dependency. Tested successfully in Chrome but failed in Firefox and IE. So make sure you use Chrome or replace the native file with links.*
 
+
+## Build Setup
+
+```bash
+# clone the project to your computer
+git clone https://github.com/Detachment/Build-vue-hackernews-2.0-from-scratch.git
+
+# open index.html file in Chrome.
+```
+
+
 ## Next
 
 So far so good. But if we have more patience and look over this edition of the project, we would find some fatal factors. All the files are in chaos, the structure of the whole project is fragile, no consideration has been taken into account in access speed and user experience. Huge price would be paied to maintain all these.
@@ -76,4 +87,4 @@ Editions:
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
-[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
+[3-Change-the-Project-as-I-like](/tutorials/3-Change-the-Project-as-I-like)

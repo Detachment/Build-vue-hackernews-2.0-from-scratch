@@ -36,6 +36,22 @@ We should config webpack both in server side and client side to make them work t
 4. **What exactly happens when we type `npm run dev` in command propmt?**  
 To be continued.
 
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve in dev mode, with hot reload at localhost:8080
+npm run dev
+
+# build for production
+npm run build
+
+# serve in production mode
+npm start
+```
+
 ## Next
 Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.
 
@@ -44,4 +60,4 @@ Editions:
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)  
-[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
+[3-Change-the-Project-as-I-like](/tutorials/3-Change-the-Project-as-I-like)

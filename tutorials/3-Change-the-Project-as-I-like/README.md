@@ -37,8 +37,28 @@ To make this website also responsive, I tweaked the CSS part. You can see the la
 4. **Add `toTop` button in Comment.vue**  
 There are too many comments in some items. So I think it maybe better to add a `toTop` button in this situation.
 
+
+## Build Setup
+
+``` bash
+# install dependencies
+npm install
+
+# serve in dev mode, with hot reload at localhost:8080
+npm run dev
+
+# build for production
+npm run build
+
+# serve in production mode
+npm start
+```
+
+
 ## End
-All four editions of this project are completed now. During the process of making this edition, I enjoyed the happiness of thinking and creating. I hope you all can also experience this.
+All four editions of this project are completed now. During the process of making this edition, I enjoyed the happiness of thinking and creating. I hope you all can also experience this.  
+Finally, give my special thanks to [Evan You](https://github.com/yyx990803) for this wonderful framework and perfect project!
+
 
 
 Editions:  

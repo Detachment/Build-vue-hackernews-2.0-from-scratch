@@ -110,9 +110,23 @@ We have made some progress when comparing this edition with the previous one, be
 However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.  
 *Note: You have to install the lastest version of node.js before you use npm.*
 
+## Build Setup
+
+```bash
+# assume you have downloaded the project in previous editon
+# bundle all files.
+# or npm run start
+npm start  
+
+# if you change things and want to bundle again, run npm test
+# this will delete the first one and emit a new bundle.
+# or npm run test
+npm test
+```
+
 Editions:  
 [Introductioin](/README.md)  
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
 [2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)    
-[3-Change-the-Project-as-I-like](tutorials/3-Change-the-Project-as-I-like)
+[3-Change-the-Project-as-I-like](/tutorials/3-Change-the-Project-as-I-like)
