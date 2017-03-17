@@ -1,4 +1,6 @@
-# 从零开始搭建 《vue-hackernews-2.0》
+# 从零开始搭建 《vue-hackernews-2.0》 [English](./README.md)
+
+## 前言
 
 欢迎大家来到我的第一个程序搭建教程: **从零开始搭建 《vue-hackernews-2.0》**.
 
@@ -25,7 +27,7 @@
 </p>
 
 ### 1. Webpack, Vue.js, Vue-router, Vuex and Hackernews API
-经过第一个版本后，我们对这个项目有了初步的了解。在这个版本中，我们会使用一些工具，使得我们这个项目初步模块化，同时也更加便于维护。在这个版本中我们将会使用到一些基本的插件和包，并通过 webpack 来实现功能。我们只需要简单的配置一下 webpack 就行，不会涉及到服务器端的内容，不会涉及缓存也不会设计生产模式及开发模式的不同配置。下面的动图就是这个版本的成品，同时这个动图里面还包含了对整个项目的简单解构。
+经过第一个版本后，我们对这个项目有了初步的了解。在这个版本中，我们会使用一些工具，使得我们这个项目初步模块化，同时也更加便于维护。在这个版本中我们将会使用到一些基本的插件和包，并通过 webpack 来实现功能。我们只需要简单的配置一下 webpack 就行，不会涉及到服务器端的内容，不会涉及缓存也不会涉及生产模式及开发模式的不同配置。下面的动图就是这个版本的成品，同时这个动图里面还包含了对整个项目的简单解构。
 
 <p align="center">
     <img src="./tutorials/1-webpack-vue.js-router-store-firebase/public/first_edition.gif" width="700px" alt="Basic functions and simple deconstruction" >
@@ -34,11 +36,12 @@
 </p>
 
 ### 2. Server, Packages and Plugins for Better Performance
-This edition can be the most difficult part for me in the whole project.
-So many plugins, packages and new techniques make the project extremely complex for me. I have tried my best to figure this out and in the following part I will share what I have got with you.
+于我而言，这个版本是整个项目中最难的一个版本。为了优化用户体验，原作者将很多因素考虑在内，这就会带来很多需要了解的新知识，比如 node.js 中的 express 框架以及各种插件。服务器端及客户端、生产模式及调试模式的不同配置是这个版本的重点。在接下来的片段中，我会将我所理解的部分分享给大家。
+由于这个版本和[官网](https://vue-hn.now.sh/top)的一样，我就不上效果图了。
 
 ### 3. Change the Project as I like
-In this edition, I will change the style of Vue-HN to be more Vue.js, at least in the visual respect. The GIF below is the final editon of mine, you can have a visit to the original website: [Vue-HackerNews 2.0](https://vue-hn.now.sh/top). The details of the differences will be discussed in Process part.
+在这个版本中，我将会根据自己的喜好对整个网页进行一些改造，使得网页整体更具有 Vue.js 风格，至少从视觉上来说更加的 Vue.js。下面的动图可以预览到我这个版本的成品，为了对照官方例子，你可以去[官网](https://vue-hn.now.sh/top)查看原网页。对于所添加及更改的部分，本节的下半部分将会详细介绍。
+
 <p align="center">
     <img src="./tutorials/3-Change-the-Project-as-I-like/public/last-edition-resize.gif" width="700px" alt="Last Edition of Vue-HackerNews" >
     <br/>
@@ -47,7 +50,7 @@ In this edition, I will change the style of Vue-HN to be more Vue.js, at least i
 
 
 
-## Table of contents
+## 目录
 
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
