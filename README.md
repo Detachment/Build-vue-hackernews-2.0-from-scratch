@@ -1,6 +1,6 @@
 # Bulid vue-hackernews-2.0 from Scratch
 
-## Preface
+## Preface [ 中文版本 ](./README.cn.md)
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 

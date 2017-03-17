@@ -1,6 +1,6 @@
-# 从零开始搭建 《vue-hackernews-2.0》 [English](./README.md)
+# 从零开始搭建 《vue-hackernews-2.0》
 
-## 前言
+## 前言 [ [English Version](./README.md) ]
 
 欢迎大家来到我的第一个程序搭建教程: **从零开始搭建 《vue-hackernews-2.0》**.
 

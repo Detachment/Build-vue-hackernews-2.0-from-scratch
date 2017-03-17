@@ -1,6 +1,6 @@
 # 0. Vue.js, Vuex, Vue-router, HN API, Firebase, ES6
 
-## Preface
+## Preface [ 中文版本 ](./README.cn.md)
 
 As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the my edition and offical edition respectively.
 
@@ -31,28 +31,27 @@ Don't get dizzy when you see so many lists, because apart from the vue.js and it
 There are some key points to bulid this project:  
 - How to get data through the offered HackerNews API without installing Firebase package?     
 **Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:  
+    ```javascript
+    // without installing firebase package:
 
-```javascript
-// without installing firebase package:
+    var config = {
+        databaseURL: "https://hacker-news.firebaseio.com"
+    };
+    firebase.initializeApp(config);
 
-var config = {
-    databaseURL: "https://hacker-news.firebaseio.com"
-};
-firebase.initializeApp(config);
+    var api = firebase.database().ref('/v0');
 
-var api = firebase.database().ref('/v0');
+    // with firebase package:
+    import Firebase from 'firebase'
 
-// with firebase package:
-import Firebase from 'firebase'
+    const api = inBrowser
+      ? new Firebase('https://hacker-news.firebaseio.com/v0')
+      : (process.__API__ || (process.__API__ = createServerSideAPI()))
 
-const api = inBrowser
-  ? new Firebase('https://hacker-news.firebaseio.com/v0')
-  : (process.__API__ || (process.__API__ = createServerSideAPI()))
+    function createServerSideAPI () {
+      const api = new Firebase('https://hacker-news.firebaseio.com/v0')
 
-function createServerSideAPI () {
-  const api = new Firebase('https://hacker-news.firebaseio.com/v0')
-
-```
+    ```
 
 - How to communicate between vuex and router?  
 **Answer :** Two key points to ensure this:
