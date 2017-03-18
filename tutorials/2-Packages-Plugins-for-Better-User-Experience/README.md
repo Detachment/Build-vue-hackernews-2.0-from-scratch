@@ -1,6 +1,6 @@
 # 2. Server, Packages and Plugins for Better Performance
 
-## Preface
+## Preface [ 中文版本 ](./README.cn.md)
 This edition can be the most difficult part for me in the whole project.
 So many plugins, packages and new techniques make the project extremely complex for me. I have tried my best to figure this out and in the following part I will share what I have got with you.
 

@@ -82,7 +82,11 @@ git clone https://github.com/Detachment/Build-vue-hackernews-2.0-from-scratch.gi
 目前一切顺利。但是如果我们更耐心些，重新审视这个版本的项目，我们会发现存在一些致命的缺陷。比如所有的文件都很混乱，项目的结构非常的脆弱，而且没有任何措施用于提高访问速度、优化用户体验。这些都会造成很高的维护成本。  
 在下一个版本中，我们将针对这些作出一些改进。  
 
-版本：  
+下一版本：   
+[1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase/README.cn.md)    
+
+
+目录：  
 [Introductioin](/README.cn.md)  
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router/README.cn.md)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase/README.cn.md)    
