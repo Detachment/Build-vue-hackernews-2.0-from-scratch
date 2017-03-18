@@ -102,7 +102,7 @@
 ```
 
 ### 第五步
-**终于要用上 webpack 啦！** 如果你对于 [webpack](https://webpack.js.org/) , [node.js](https://nodejs.org/en/) 以及 [npm](https://docs.npmjs.com/getting-started/what-is-npm)这些内容完全不知道，那么你就需要在开始这一步之前花几个小时的时间来了解一下。 在这个版本中，我们利用包管理工具 `npm` 来安装或者卸载插件。在初始化我们的项目的时候，我们既可以通过在命令行中输入 `npm init` （自动新建 node 配置文件，默认文件名为 `package.json` ）又可以自己手动新建一个名为 `package.json` 的配置文件。安装完各种插件后，我们可以开始配置 webpack 了。为了方便起见，我们会新建一个配置文件，默认文件名为 `webpack.config.js` ，在这个文件里面我们将会对项目进行简单配置。具体的配置情况可以去看原文件。   
+**终于要用上 webpack 啦！** 如果你对于 [webpack](https://webpack.js.org/) , [node.js](https://nodejs.org/en/) 以及 [npm](https://docs.npmjs.com/getting-started/what-is-npm) 这些内容完全不知道，那么你就需要在开始这一步之前花几个小时的时间来了解一下。 在这个版本中，我们利用包管理工具 `npm` 来安装或者卸载插件。在初始化我们的项目的时候，我们既可以通过在命令行中输入 `npm init` （自动新建 node 配置文件，默认文件名为 `package.json` ）又可以自己手动新建一个名为 `package.json` 的配置文件。安装完各种插件后，我们可以开始配置 webpack 了。为了方便起见，我们会新建一个配置文件，默认文件名为 `webpack.config.js` ，在这个文件里面我们将会对项目进行简单配置。具体的配置情况可以去看原文件。   
 > 注意：在使用 `npm` 之前，你必须先安装最新版本的 `node.js`，否则无法运行成功。
 
 ## 运行设置
