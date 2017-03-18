@@ -32,7 +32,7 @@
 <p align="center">
     <img src="./tutorials/1-webpack-vue.js-router-store-firebase/public/first_edition.gif" width="700px" alt="Basic functions and simple deconstruction" >
     <br/>
-    [Basic Functions and Simple Deconstruction]
+    [ 基本功能及简单解构 ]
 </p>
 
 ### 2. Server, Packages and Plugins for Better Performance
@@ -45,7 +45,7 @@
 <p align="center">
     <img src="./tutorials/3-Change-the-Project-as-I-like/public/last-edition-resize.gif" width="700px" alt="Last Edition of Vue-HackerNews" >
     <br/>
-    [Last Edition of Vue-HackerNews]
+    [ Vue-HackerNews 最后版本 ]
 </p>
 
 
