@@ -16,7 +16,7 @@ As a new learner of front-end development, ever since I started to learn Vue-HN 
 </p>
 
 
-As we can see, almost all the features that existed in the offical example can also be implemented with just vue.js and its ecosystem. Before you start with this chapter, you should acquire some knowledge listed as below:
+As we can see, almost all the features that existed in the offical example can also be implemented with just Vue.js and its ecosystem. Before you start with this chapter, you should acquire some knowledge listed as below:
 - [Vue.js 2.0: The Progressive JavaScript Framework](https://vuejs.org/)
 - [Vue-router 2.0: A Simple Router for Vue.js](https://router.vuejs.org/en/)
 - [Vuex 2.0: State Management Patter and Library for Vue.js Application ](http://vuex.vuejs.org/en/)
@@ -24,13 +24,13 @@ As we can see, almost all the features that existed in the offical example can a
 - [Learn ES2015: A detailed overview of ECMAScript 2015 features](https://babeljs.io/learn-es2015/)
 - [Firebase: App success made simple](https://firebase.google.com/docs/web/setup)
 
-Don't get dizzy when you see so many lists, because apart from the vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
+Don't get dizzy when you see so many lists, because apart from the Vue.js and its ecosystem, you just need to know a little about the others. Take ES6 for example, it is enough if you have ever used arrow function, Promise and some other basic features.  
 
 ## Process
 
 There are some key points to bulid this project:  
 - How to get data through the offered HackerNews API without installing Firebase package?     
-**Answer :** After reading the Firebase ducument, I find the way to use firebase in a project without installing firebase package. Codes that with and without installing package can be like following:  
+**Answer :** After reading the Firebase ducument, I find the way to use Firebase in a project without installing Firebase package. Codes that with and without installing package can be like following:  
     ```javascript
     // without installing firebase package:
 
@@ -53,9 +53,9 @@ There are some key points to bulid this project:
 
     ```
 
-- How to communicate between vuex and router?  
+- How to communicate between Vuex and router?  
 **Answer :** Two key points to ensure this:
-    - Register store and router in the same vue instance;
+    - Register vuex and router in the same vue instance;
     - With the help of a package named "vuex-router-sync".  
     > Note: Without a package management tool, we should modify the index.js of this package and rename it as sync.js and then link it as a javascript file.    
 

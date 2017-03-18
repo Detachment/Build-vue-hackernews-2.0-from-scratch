@@ -124,9 +124,10 @@ npm test
 We have made some progress when comparing this edition with the previous one, because this edition is more modularized and maintainable. As mentioned in the last chapter, previous edition only works in Chrome because of the dependency which is not a problem any more.
 However, the project is still far from perfect. In the next edition, we would take more factors into consideration. All packages and plugins that deal with these factors are aiming at a better user experience.  
 
+Next Edition:  
+[2-Packages-Plugins-for-Better-User-Experience](/tutorials/2-Packages-Plugins-for-Better-User-Experience)      
 
-
-Editions:  
+Table of Content:  
 [Introductioin](/README.md)  
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    

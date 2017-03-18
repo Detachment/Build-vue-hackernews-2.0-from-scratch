@@ -53,9 +53,13 @@ npm start
 ```
 
 ## Next
-Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.
+Basically, above is all what I get for the project. In next chapter, I will do some change as I like. Meet you there.  
 
-Editions:  
+Next Edition:  
+[3-Change-the-Project-as-I-like](/tutorials/3-Change-the-Project-as-I-like)
+    
+
+Table of Content:  
 [Introductioin](/README.md)   
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)   
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    

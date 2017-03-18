@@ -5,7 +5,7 @@
 在这个版本中，我将会根据自己的喜好对整个网页进行一些改造，使得网页整体更具有 Vue.js 风格，至少从视觉上来说更加的 Vue.js。下面的动图可以预览到我这个版本的成品，为了对照官方例子，你可以去[官网](https://vue-hn.now.sh/top)查看原网页。对于所添加及更改的部分，本节的下半部分将会详细介绍。
 
 <p align="center">
-    <img src="./tutorials/3-Change-the-Project-as-I-like/public/last-edition-resize.gif" width="700px" alt="Last Edition of Vue-HackerNews" >
+    <img src="./public/last-edition-resize.gif" width="700px" alt="Last Edition of Vue-HackerNews" >
     <br/>
     [ Vue-HackerNews 最后版本 ]
 </p>
@@ -59,7 +59,7 @@ npm start
 
 ## 结尾  
 到目前为止，这个项目的所有版本都已经完成了。在完成这些版本的过程中，我感受到了思考和创造带来的乐趣。这就是生活啊，希望大家也能感受到。  
-最后，衷心感谢原作者 [尤雨溪前辈](https://github.com/yyx990803)给我们提供了一个这么好用的框架以及这么精彩的官方示例！
+最后，衷心感谢原作者 [尤雨溪前辈](https://github.com/yyx990803) 给我们提供了一个这么好用的框架以及这么精彩的官方示例！
 
 
 

@@ -4,16 +4,16 @@
 
 Welcome to my first application bulid tutorial: **Bulid vue-hackernews-2.0 from Scratch**.
 
-As a new learner of front-end develop and vue.js, I find it a bit difficult to understand the offical example: vue-hackernews-2.0. Meanwhile, the complexity of this example really attracts me. So I spend some time on figuring out how it works and with this tutorial I will show you how I rebulid it step-by-step.
+As a new learner of front-end development and Vue.js, I find it a bit difficult to understand the offical example: vue-hackernews-2.0. Meanwhile, the complexity of this example really attracts me. So I spend some time on figuring out how it works and with this tutorial I will show you how I rebulid it step-by-step.
 
 **Note that this tutorial is for beginners.** I will divide this tutorial into serval chapters, each of then represent different step of the whole process. In the head of every chapter, I would list some basic understandings that are acquired for the corresponding chapter.
 
-Notices: Vue-HN is short for vue-hackernews-2.0 in all the after chapters to help us save some keystrokes. The code of this tutorial works on Windows, other OS haven't been tested.
+> Notices: Vue-HN is short for vue-hackernews-2.0 in all the after chapters to help us save some keystrokes. The code of this tutorial works on Windows 7, other OS haven't been tested.
 
 
 ## Brief Intro to Each Edition
 ### 0. Vue.js, Vuex, Vue-router, HN API, Firebase, ES6
-As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just vue.js, vuex and vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the my edition and offical edition respectively.
+As a new learner of front-end development, ever since I started to learn Vue-HN project, I wondered whether it is possible to make this project with just Vue.js, Vuex and Vue-router. After some tries and failures, I finally made it. The GIFs below are the animation screenshots of the my edition and offical edition respectively.
 
 <p align="center">
     <img src="./tutorials/0-vue.js-vuex-router/img/Author.gif" width="700px" alt="Origin Website">
@@ -50,7 +50,7 @@ In this edition, I will change the style of Vue-HN to be more Vue.js, at least i
 
 
 
-## Table of contents
+## Table of Contents
 
 [0-vue.js-vuex-router-firebase-ES6](/tutorials/0-vue.js-vuex-router)  
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)    
