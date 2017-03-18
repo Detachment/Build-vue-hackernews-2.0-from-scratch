@@ -1,6 +1,6 @@
 # 3. Change the Project as I like
 
-## Preface
+## Preface [ 中文版本 ](./README.cn.md)
 
 In this edition, I will change the style of Vue-HN to be more Vue.js, at least in the visual respect. The GIF below is the final editon of mine, you can have a visit to the original website: [Vue-HackerNews 2.0](https://vue-hn.now.sh/top). The details of the differences will be discussed in Process part.
 <p align="center">
