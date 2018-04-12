@@ -62,7 +62,7 @@ There are some key points to bulid this project:
 - How to deal with .vue file?  
 **Answer :** Files ended up with .vue mean that they are single file components. We can replace them with "x-template" in html part, "Vue.extend" in javascript part and css file in style part. Want to know more specific you should take a dive into the source code.  
 
-After you conquered all these problems and with good understanding of vue.js ecosystem, you can bulid this project all by your own!
+After you conquered all these problems and with good understanding of vue.js ecosystem, you can build this project all by your own!
 
 > Note: The loading order of files in the html head part affects this project a lot because of the dependency. Tested successfully in Chrome but failed in Firefox and IE. So make sure you use Chrome or replace the native file with links.
 
