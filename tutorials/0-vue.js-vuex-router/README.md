@@ -79,7 +79,7 @@ git clone https://github.com/Detachment/Build-vue-hackernews-2.0-from-scratch.gi
 
 ## Next
 
-So far so good. But if we have more patience and look over this edition of the project, we would find some fatal factors. All the files are in chaos, the structure of the whole project is fragile, no consideration has been taken into account in access speed and user experience. Huge price would be paied to maintain all these.
+So far so good. But if we have more patience and look over this edition of the project, we would find some fatal factors. All the files are in chaos, the structure of the whole project is fragile, no consideration has been taken into account in access speed and user experience. Huge price would be paid to maintain all these.
 
 Next Edition:  
 [1-webpack-vue.js-router-store-firebase](/tutorials/1-webpack-vue.js-router-store-firebase)   
