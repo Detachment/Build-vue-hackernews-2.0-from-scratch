@@ -2,7 +2,7 @@
 
 ## Preface  [ 中文版本 ](./README.cn.md)
 
-In this chapter, we will bulid another edition of Vue-HN in which we would start to make this project more modularized and maintainable. With some very basic configurations of webpack, we would make this edition of the project work. In order to bulid the whole project step by step, we still did not consider server, SSR(server-side-render), cache and so on in this edition.
+In this chapter, we will build another edition of Vue-HN in which we would start to make this project more modularized and maintainable. With some very basic configurations of webpack, we would make this edition of the project work. In order to build the whole project step by step, we still did not consider server, SSR(server-side-render), cache and so on in this edition.
 So, the following animation screenshot would show us the basic functions in this edition and some simple deconstruction of the project.
 
 <p align="center">
@@ -31,7 +31,7 @@ In order to get a smoothly process, you should acquire some basic understandings
 It seems too many packages you should get to learn when you just get a glimpse of the list. Don't get afriad because all you need to know about these packages is what are they for and how to config them. Believe me, it is pretty simple!
 
 ## Process
-There are several important steps to bulid this edition, every step would be introduced briefly in the following part.
+There are several important steps to build this edition, every step would be introduced briefly in the following part.
 
 ### Step 1
 **Deconstruct the project.** To be honst, I should have written this step in the previous edition. When we start a project, inevitablely we should have a plan in our mind about how the project works, what kind of style the pages have and so on.
@@ -49,7 +49,7 @@ And we can know that this project is made up with several views and each of the 
 
 
 ### Step 3
-**Bulid components and views.** Bulid components first, and then use components to bulid views. Transfer data between them with "props" option. Stucture of the project folder would like:
+**Build components and views.** Build components first, and then use components to build views. Transfer data between them with "props" option. Stucture of the project folder would like:
 ```
 | -- src
 |    | -- store
