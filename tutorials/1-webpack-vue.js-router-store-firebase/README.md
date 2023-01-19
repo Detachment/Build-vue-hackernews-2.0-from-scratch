@@ -109,7 +109,7 @@ And we can know that this project is made up with several views and each of the 
 ## Build Setup
 
 ```bash
-# assume you have downloaded the project in previous editon
+# assume you have downloaded the project in previous edition
 # bundle all files.
 # or npm run start
 npm start  
